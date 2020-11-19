@@ -1,0 +1,9 @@
+app:
+  env: dev
+  name: kekai's blog
+
+mysql:
+  uri: blog:DG90L7NUed7DiuRY@tcp(115.29.202.69)/blog
+  host: 115.29.202.69
+  user: blog
+  pass: DG90L7NUed7DiuRY
