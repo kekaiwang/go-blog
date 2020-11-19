@@ -3,7 +3,11 @@
  */
 package model
 
-import "time"
+import (
+	"time"
+
+	"github.com/kekaiwang/go_blog/pkg/drives"
+)
 
 //Article 文章
 type Article struct {
@@ -38,6 +42,13 @@ func (a *Article) TableName() string {
 	return `article`
 }
 
-func (a *Article) GetArticleBySlug() (*Article, error) {
+//GetArticleBySlug get first article by slug
+func (a *Article) GetArticleBySlug(slug string) (*Article, error) {
 	article := &Article{}
+	err := drives.BlogDB.Table(a.TableName()).Where("slug = ? ", slug).First(article).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return article, nil
 }

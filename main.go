@@ -8,12 +8,14 @@ import (
 
 	"github.com/facebookgo/grace/gracehttp"
 	"github.com/gin-gonic/gin"
+	"github.com/kekaiwang/go_blog/pkg/drives"
 	"github.com/kekaiwang/go_blog/router"
 	"github.com/kekaiwang/go_blog/utils/core"
 	"github.com/kekaiwang/go_blog/utils/format"
 )
 
 func main() {
+	initResource()
 	wg := sync.WaitGroup{}
 
 	stopCtx, stopFunc := context.WithCancel(context.Background())
@@ -51,4 +53,8 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 			}
 		}
 	}(stopCtx, wg)
+}
+
+func initResource() {
+	drives.BlogDBInit()
 }

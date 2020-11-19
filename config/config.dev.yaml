@@ -3,7 +3,12 @@ app:
   name: kekai's blog
 
 mysql:
-  uri: blog:DG90L7NUed7DiuRY@tcp(115.29.202.69)/blog
+  uri: blog:DGd6L7NUeo7DRURY@tcp(115.29.202.69)/goblog
   host: 115.29.202.69
   user: blog
-  pass: DG90L7NUed7DiuRY
+  pass: DGd6L7NUeo7DRURY
+  max_idle_conns: 2
+  max_open_conns: 5
+  log_mode: true
+  ## minutes
+  conn_max_lifetime: 60
