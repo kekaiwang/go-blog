@@ -30,3 +30,13 @@ func (t *Tag) TableName() string {
 func (t *Tag) Create(tag *Tag) error {
 	return drives.BlogDB.Create(tag).Error
 }
+
+func (t *Tag) GetTagByIds(ids string) ([]*Tag, error) {
+	tags := []*Tag{}
+	err := drives.BlogDB.Table(t.TableName()).Where("id in (?) ", ids).Find(&tags).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return tags, nil
+}

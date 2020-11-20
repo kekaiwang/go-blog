@@ -1,8 +1,6 @@
 package article
 
 import (
-	"fmt"
-
 	"github.com/kekaiwang/go-blog/internal/model"
 )
 
@@ -22,16 +20,7 @@ func (req *GetIndexArticleReq) GetArticleList() (*IndexArticleRes, error) {
 	}
 
 	// 2. get category list
-	var c model.Category
-	categories, err := c.GetAll()
-	if err != nil {
-		return nil, err
-	}
-
-	cMap := make(map[int64]*model.Category)
-	for _, c := range categories {
-		cMap[c.Id] = c
-	}
+	cMap := getCategory()
 
 	// 3. get total article
 	total, err := a.CountArticle(model.UnDraft)
@@ -65,6 +54,77 @@ func (req *GetIndexArticleReq) GetArticleList() (*IndexArticleRes, error) {
 	res.CurrentPage = req.Page
 	res.Total = total
 
-	fmt.Println("-----", res)
 	return &res, nil
+}
+
+func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
+
+	var (
+		res       *ArticleDetailRes
+		detailTag []*ArticleTag
+	)
+
+	// 1. get article info
+	var a model.Article
+	article, err := a.GetArticleBySlug(req.Slug)
+	if err != nil {
+		return nil, err
+	}
+
+	// 2. get tags
+	var t model.Tag
+	tags, err := t.GetTagByIds(article.TagIds)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, val := range tags {
+		tag := &ArticleTag{
+			Name:       val.Name,
+			RouterLink: val.RouterLink,
+		}
+
+		detailTag = append(detailTag, tag)
+	}
+
+	// 3. get category list
+	cMap := getCategory()
+
+	catg, ok := cMap[article.CategoryId]
+	if !ok {
+		catg = &model.Category{}
+	}
+
+	timeStr := article.DisplayTime.Format("2006-01-02")
+
+	res = &ArticleDetailRes{
+		Title:        article.Title,
+		Thumb:        article.Thumb,
+		Slug:         article.Thumb,
+		Excerpt:      article.Excerpt,
+		Content:      article.Content,
+		DisplayTime:  timeStr,
+		Next:         article.Next,
+		Previous:     article.Previous,
+		CategoryName: catg.Name,
+		CategoryLink: catg.RouterLink,
+		Tag:          detailTag,
+	}
+
+	return res, nil
+}
+
+func getCategory() map[int64]*model.Category {
+	var c model.Category
+	categories, err := c.GetAll()
+	if err != nil {
+		return nil
+	}
+
+	cMap := make(map[int64]*model.Category)
+	for _, c := range categories {
+		cMap[c.Id] = c
+	}
+
+	return cMap
 }

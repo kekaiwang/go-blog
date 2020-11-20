@@ -33,7 +33,7 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 
 	router.SetupRouter(r)
 	ser := &http.Server{
-		Addr:              ":8088",
+		Addr:              ":8089",
 		Handler:           r,
 		ReadHeaderTimeout: 5 * time.Second,
 		WriteTimeout:      5 * time.Second,
@@ -57,4 +57,9 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 
 func initResource() {
 	drives.BlogDBInit()
+}
+
+func add(in int) (out int) {
+	out = in + 1
+	return
 }

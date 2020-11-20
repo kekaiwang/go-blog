@@ -59,7 +59,7 @@
     <div class="lists-navigator clearfix">
         <ol class="page-navigator">
             {{if gt .current_page 1}}
-            <li class="prev"><a href="/{{ .current_page }}">←</a></li>
+            <li class="prev"><a href="/?page={{ .current_page }}">←</a></li>
             {{end}}
 
             <li class="current">
@@ -70,7 +70,7 @@
             </li>
 
             {{if gt .total .current_page}}
-            <li class="next"><a href="/{{ .current_page}}">→</a></li>
+            <li class="next"><a href="/?page={{ .current_page }}">→</a></li>
             {{end}}
         </ol>
     </div>

@@ -23,8 +23,9 @@ func SetupRouter(g *gin.Engine) {
 
 		c.HTML(http.StatusNotFound, "index.html", nil)
 	})
+	g.GET("/article/:slug", api.GetArticleDetail) // article detail
 
-	g.GET("/*page", api.GetIndexArticle)
+	g.GET("/", api.GetIndexArticle) // index page
 
 	v := g.Group("/admin")
 	{

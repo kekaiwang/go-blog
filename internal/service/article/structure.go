@@ -1,5 +1,6 @@
 package article
 
+// Index page
 type GetIndexArticleReq struct {
 	Page   int64 `json:"page"`
 	Offset int64 `json:"offset"`
@@ -21,4 +22,28 @@ type GetIndexArticleRes struct {
 	DisplayTime  string `json:"display_time"`
 	CategoryName string `json:"category_name"`
 	CategoryLink string `json:"category_link"`
+}
+
+// article detail
+type ArticleDetailReq struct {
+	Slug string `json:"slug"`
+}
+
+type ArticleDetailRes struct {
+	Title        string        `json:"title"`
+	Thumb        string        `json:"thumb"`
+	Slug         string        `json:"slug"`
+	Excerpt      string        `json:"excerpt"`
+	Content      string        `json:"content"`
+	DisplayTime  string        `json:"display_time"`
+	Next         string        `json:"next"`
+	Previous     string        `json:"previous"`
+	CategoryName string        `json:"category_name"`
+	CategoryLink string        `json:"category_link"`
+	Tag          []*ArticleTag `json:"tag"`
+}
+
+type ArticleTag struct {
+	Name       string `json:"name"`
+	RouterLink string `json:"router_link"`
 }

@@ -61,8 +61,7 @@ func (a *Article) GetArticleBySlug(slug string) (*Article, error) {
 //GetArticleList
 func (a *Article) GetArticleList(limit, offset int64, isDraft int) ([]*Article, error) {
 	articles := []*Article{}
-
-	err := drives.BlogDB.Table(a.TableName()).Where("is_draft = ? ", isDraft).Find(&articles).Limit(limit).Offset(offset).Order("display_time DESC").Error
+	err := drives.BlogDB.Table(a.TableName()).Where("is_draft = ? ", isDraft).Limit(limit).Offset(offset).Order("display_time DESC").Find(&articles).Error
 	if err != nil {
 		return nil, err
 	}
