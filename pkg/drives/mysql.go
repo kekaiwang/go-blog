@@ -7,7 +7,7 @@ import (
 	//import mysql driver
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	"github.com/kekaiwang/go_blog/config"
+	"github.com/kekaiwang/go-blog/config"
 )
 
 var (

@@ -3,7 +3,7 @@ app:
   name: kekai's blog
 
 mysql:
-  uri: root:@tcp(localhost)/goblog
+  uri: root:@tcp(localhost)/goblog?parseTime=true
   host: localhost
   user: root
   pass: 

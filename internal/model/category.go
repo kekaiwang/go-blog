@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	"github.com/kekaiwang/go_blog/pkg/drives"
+	"github.com/kekaiwang/go-blog/pkg/drives"
 )
 
 type Category struct {
@@ -29,4 +29,16 @@ func (c *Category) TableName() string {
 //Create insert category
 func (c *Category) Create(category *Category) error {
 	return drives.BlogDB.Create(category).Error
+}
+
+//GetAll
+func (c *Category) GetAll() ([]*Category, error) {
+	categories := []*Category{}
+
+	err := drives.BlogDB.Table(c.TableName()).Find(&categories).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return categories, nil
 }

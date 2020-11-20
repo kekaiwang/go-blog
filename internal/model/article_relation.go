@@ -1,6 +1,6 @@
 package model
 
-import "github.com/kekaiwang/go_blog/pkg/drives"
+import "github.com/kekaiwang/go-blog/pkg/drives"
 
 type ArticleRelation struct {
 	Id        int64 `gorm:"primary_key"`

@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/kekaiwang/go_blog/utils/format"
+	"github.com/kekaiwang/go-blog/utils/format"
 )
 
 func RegisterSignal(stopFunc context.CancelFunc) {

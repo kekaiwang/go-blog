@@ -8,10 +8,10 @@ import (
 
 	"github.com/facebookgo/grace/gracehttp"
 	"github.com/gin-gonic/gin"
-	"github.com/kekaiwang/go_blog/pkg/drives"
-	"github.com/kekaiwang/go_blog/router"
-	"github.com/kekaiwang/go_blog/utils/core"
-	"github.com/kekaiwang/go_blog/utils/format"
+	"github.com/kekaiwang/go-blog/pkg/drives"
+	"github.com/kekaiwang/go-blog/router"
+	"github.com/kekaiwang/go-blog/utils/core"
+	"github.com/kekaiwang/go-blog/utils/format"
 )
 
 func main() {

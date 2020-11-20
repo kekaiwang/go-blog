@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/kekaiwang/go_blog/app/api"
-	"github.com/kekaiwang/go_blog/router/middleware"
+	"github.com/kekaiwang/go-blog/app/api"
+	"github.com/kekaiwang/go-blog/router/middleware"
 )
 
 func SetupRouter(g *gin.Engine) {
@@ -24,11 +24,7 @@ func SetupRouter(g *gin.Engine) {
 		c.HTML(http.StatusNotFound, "index.html", nil)
 	})
 
-	g.GET("/*page", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
+	g.GET("/*page", api.GetIndexArticle)
 
 	v := g.Group("/admin")
 	{

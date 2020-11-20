@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	"github.com/kekaiwang/go_blog/pkg/drives"
+	"github.com/kekaiwang/go-blog/pkg/drives"
 )
 
 type PageInfo struct {
