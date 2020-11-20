@@ -24,7 +24,7 @@ func SetupRouter(g *gin.Engine) {
 		c.HTML(http.StatusNotFound, "index.html", nil)
 	})
 
-	g.GET("/", func(c *gin.Context) {
+	g.GET("/*page", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
