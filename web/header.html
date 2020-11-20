@@ -1,0 +1,63 @@
+{{ define "header" }}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- <title>{{.Title}} - wangkekai's blog</title> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://mail.wangkekai.cn/goblog.css?v=876yt5" />
+    <link rel="stylesheet" href="https://mail.wangkekai.cn/font-awesome.min.css?v=8re765" />
+
+    <meta name="description" content="My name is Wangkekai, I use @Three_water on web. I'm a phper+.">
+    <meta name="keywords" content="wangkekai, wkekai, blog, Wangkekai`s Blog, PHP, Golang, Beego, Mysql, Redis, Vue">
+    <meta name="description" content="{{.Description}} wkekai is my git name">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wangkekai`s Blog">
+    <meta property="og:url" content="https://wangkekai.cn">
+    <meta property="og:url" content="https://wangkekai.com">
+    <meta property="og:site_name" content="Wangkekai`s Blog">
+    <meta property="og:description" content="My name is Wangkekai, I use @Three_water on web. I'm a phper+.">
+    <meta property="og:locale" content="zh-CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Wangkekai`s Blog">
+    <meta name="twitter:description" content="My name is Wangkekai, I use @Three_water on web. I'm a phper+.">
+    <link rel="canonical" href="https://wangkekai.com/">
+    <link rel="canonical" href="https://wangkekai.cn/">
+    <!-- <title>Wangkekai`s Blog</title> -->
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="headband"></div>
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                Three water
+            </a>
+            <div class="navbar-menu">
+                <!-- <a href="/archives.html">归档</a> -->
+                <a href="/page/about.html"><i class="fa fa-user"></i> About</a>
+                <a href="/page/links.html"><i class="fa fa-link" aria-hidden="true"></i> Links</a>
+                <a href="/ncov.html"><i class="fa fa-snowflake-o" aria-hidden="true"></i> nCov疫情</a>
+            </div>
+            <!-- <div class="navbar-search" onclick=""><span class="icon-search"></span>
+                <form id="search" method="post" action="/" role="search">
+                    <span class="search-box">
+                        <input type="text" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
+                    </span>
+                </form>
+            </div> -->
+            <div class="navbar-mobile-menu" onclick="">
+                <span class="icon-menu cross"><span class="middle"></span></span>
+                <ul>
+                    <a href="/page/about.html">关于</a>
+                    <a href="/page/links.html">友链</a>
+                    <a href="/ncov.html">nCov疫情</a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+{{ end }}
