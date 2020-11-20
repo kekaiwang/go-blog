@@ -3,10 +3,10 @@ app:
   name: kekai's blog
 
 mysql:
-  uri: blog:DGd6L7NUeo7DRURY@tcp(115.29.202.69)/goblog
-  host: 115.29.202.69
-  user: blog
-  pass: DGd6L7NUeo7DRURY
+  uri: root:@tcp(localhost)/goblog
+  host: localhost
+  user: root
+  pass: 
   max_idle_conns: 2
   max_open_conns: 5
   log_mode: true

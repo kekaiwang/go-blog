@@ -4,7 +4,6 @@
 package config
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -48,7 +47,6 @@ var (
 )
 
 func Get() Config {
-	fmt.Println("-----------", os.Getenv("env"))
 	once.Do(func() {
 		configFile := configPath[Env] + "config." + Env + ".yaml"
 
@@ -62,6 +60,6 @@ func Get() Config {
 			log.Printf("Yaml unmarshal err: %s", err)
 		}
 	})
-	fmt.Println("-----------", os.Getenv("env"), config)
+
 	return config
 }
