@@ -1,6 +1,10 @@
 package model
 
-import "time"
+import (
+	"time"
+
+	"github.com/kekaiwang/go_blog/pkg/drives"
+)
 
 type PageInfo struct {
 	Id        int64     `gorm:"primary_key"`
@@ -22,4 +26,9 @@ func PageInfoModel() *PageInfo {
 
 func (pi *PageInfo) TableName() string {
 	return `page_info`
+}
+
+//Create insert pageInfo
+func (pi *PageInfo) Create(pageInfo *PageInfo) error {
+	return drives.BlogDB.Create(pageInfo).Error
 }
