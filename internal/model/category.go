@@ -42,3 +42,15 @@ func (c *Category) GetAll() ([]*Category, error) {
 
 	return categories, nil
 }
+
+//GetCategoryById
+func (c *Category) GetCategoryByRouterLink(routerLink string) (*Category, error) {
+	category := Category{}
+
+	err := drives.BlogDB.Table(c.TableName()).Where("router_link = ? ", routerLink).First(&category).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return &category, nil
+}

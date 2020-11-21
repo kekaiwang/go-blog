@@ -26,9 +26,10 @@ func SetupRouter(g *gin.Engine) {
 		})
 	})
 
-	g.GET("/", api.GetIndexArticle)               // index page
-	g.GET("/article/:slug", api.GetArticleDetail) // article detail
-	g.GET("/page/:slug", api.PageInfo)            //page info
+	g.GET("/", api.GetIndexArticle)                 // index page
+	g.GET("/article/:slug", api.GetArticleDetail)   // article detail
+	g.GET("/page/:slug", api.PageInfo)              //page info
+	g.GET("/categories/:link", api.GetCategoryList) //category list
 
 	v := g.Group("/admin")
 	{

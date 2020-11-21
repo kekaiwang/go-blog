@@ -27,7 +27,7 @@ func (req *GetIndexArticleReq) GetArticleList() (*IndexArticleRes, error) {
 	cMap := getCategory()
 
 	// 3. get total article
-	total, err := a.CountArticle(model.UnDraft)
+	total, err := a.CountArticle("is_draft = ? ", []interface{}{model.UnDraft})
 	if err != nil {
 		return nil, err
 	}

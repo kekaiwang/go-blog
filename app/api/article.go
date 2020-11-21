@@ -6,6 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/kekaiwang/go-blog/internal/service/article"
+	"github.com/kekaiwang/go-blog/utils/tools"
 )
 
 // GetIndexArticle
@@ -21,11 +22,13 @@ func GetIndexArticle(ctx *gin.Context) {
 	)
 
 	if pageStr != "" {
-		page, err = strconv.ParseInt(pageStr, 10, 32)
+		page, err = strconv.ParseInt(pageStr, 10, 64)
+
 		if err != nil {
 			ctx.HTML(http.StatusOK, "error.html", nil)
+
+			return
 		}
-		return
 	}
 
 	if page == 0 {
@@ -43,10 +46,13 @@ func GetIndexArticle(ctx *gin.Context) {
 	}
 
 	ctx.HTML(http.StatusOK, "index.html", gin.H{
-		"article":      data.Data,
-		"current_page": page,
-		"total":        data.Total,
-		"Title":        "Kekai Wang's blog",
+		"article":       data.Data,
+		"current_page":  page,
+		"total":         data.Total,
+		"total_page":    tools.NewTotalPage(data.Total, limit),
+		"Title":         "Kekai Wang's blog",
+		"next_page":     page + 1,
+		"previous_page": page - 1,
 	})
 }
 

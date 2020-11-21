@@ -69,12 +69,23 @@ func (a *Article) GetArticleList(limit, offset int64, isDraft int) ([]*Article, 
 	return articles, nil
 }
 
-func (a *Article) CountArticle(isDraft int) (int64, error) {
+func (a *Article) CountArticle(where string, args []interface{}) (int64, error) {
 	var total int64
-	err := drives.BlogDB.Table(a.TableName()).Where("is_draft = ? ", isDraft).Count(&total).Error
+	err := drives.BlogDB.Table(a.TableName()).Where(where, args...).Count(&total).Error
 	if err != nil {
 		return 0, err
 	}
 
 	return total, nil
+}
+
+func (a *Article) GetArticlesByCategoryId(categoryId, limit, offset int64) ([]*Article, error) {
+	articles := []*Article{}
+
+	err := drives.BlogDB.Table(a.TableName()).Where(" category_id = ? AND is_draft = ? ", categoryId, UnDraft).Limit(limit).Offset(offset).Order("display_time DESC").Find(&articles).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return articles, nil
 }

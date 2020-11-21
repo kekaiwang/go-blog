@@ -1,0 +1,58 @@
+{{template "header" .}}
+    <div class="bg-grey">
+        <div class="main-content common-page clearfix">
+            <div class="common-item">
+
+                <div class="common-title">
+                    {{.meta.Name}}:
+                    {{.meta.Type}}
+                </div>
+
+                <div class="post-lists">
+                    <div class="post-lists-body">
+                        {{if gt .total 0}}
+                        {{range $index, $elem := .data}}
+                        <div class="post-list-item">
+                            <div class="post-list-item-container ">
+                                <div class="item-label ">
+                                    <div class="item-title">
+                                        <a class="item-category" href="/article/{{$elem.Slug}}">
+                                            {{$elem.Title}}
+                                        </a>
+                                    </div>
+                                    <div class="item-meta clearfix">
+                                        <div class="item-meta-date">
+                                            {{$elem.DisplayTime}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{end}}
+                        {{else}}
+                        <div class="post-list-item">没有任何数据</div>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+            <div class="lists-navigator clearfix">
+                <ol class="page-navigator">
+                    {{if gt .current_page 1}}
+                        <li class="prev"><a href="/?page={{ .previous_page }}">←</a></li>
+                    {{end}}
+
+                    <li class="current">
+                        <a href="javascript:">
+                            {{.current_page}} /
+                            {{.total_page}}
+                        </a>
+                    </li>
+
+                    {{if gt .total_page .current_page}}
+                        <li class="next"><a href="/?page={{ .next_page }}">→</a></li>
+                    {{end}}
+                </ol>
+            </div>
+        </div>
+    </div>
+{{ template "foot" . }}

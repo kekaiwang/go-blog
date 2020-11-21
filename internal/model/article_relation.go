@@ -22,3 +22,5 @@ func (ar *ArticleRelation) TableName() string {
 func (ar *ArticleRelation) Create(articleRelation *ArticleRelation) error {
 	return drives.BlogDB.Create(articleRelation).Error
 }
+
+//GetARBy
