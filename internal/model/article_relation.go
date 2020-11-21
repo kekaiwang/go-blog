@@ -23,4 +23,14 @@ func (ar *ArticleRelation) Create(articleRelation *ArticleRelation) error {
 	return drives.BlogDB.Create(articleRelation).Error
 }
 
-//GetARBy
+//GetARByTagId
+func (ar *ArticleRelation) GetARByTagId(id int64) ([]int, error) {
+	articleIds := []int{}
+
+	err := drives.BlogDB.Table(ar.TableName()).Where("tag_id = ? ", id).Pluck("article_id", &articleIds).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return articleIds, nil
+}

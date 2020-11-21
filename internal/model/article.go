@@ -79,10 +79,10 @@ func (a *Article) CountArticle(where string, args []interface{}) (int64, error) 
 	return total, nil
 }
 
-func (a *Article) GetArticlesByCategoryId(categoryId, limit, offset int64) ([]*Article, error) {
+func (a *Article) GetArticlesByCTId(query string, args []interface{}, limit, offset int64) ([]*Article, error) {
 	articles := []*Article{}
 
-	err := drives.BlogDB.Table(a.TableName()).Where(" category_id = ? AND is_draft = ? ", categoryId, UnDraft).Limit(limit).Offset(offset).Order("display_time DESC").Find(&articles).Error
+	err := drives.BlogDB.Table(a.TableName()).Where(query, args...).Limit(limit).Offset(offset).Order("display_time DESC").Find(&articles).Error
 	if err != nil {
 		return nil, err
 	}

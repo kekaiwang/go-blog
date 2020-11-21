@@ -40,3 +40,15 @@ func (t *Tag) GetTagByIds(ids []int) ([]*Tag, error) {
 
 	return tags, nil
 }
+
+//GetTagByRouterLink
+func (t *Tag) GetTagByRouterLink(routerLink string) (*Tag, error) {
+	tag := Tag{}
+
+	err := drives.BlogDB.Table(t.TableName()).Where("router_link = ? ", routerLink).First(&tag).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return &tag, nil
+}

@@ -43,7 +43,7 @@ func (c *Category) GetAll() ([]*Category, error) {
 	return categories, nil
 }
 
-//GetCategoryById
+//GetCategoryByRouterLink
 func (c *Category) GetCategoryByRouterLink(routerLink string) (*Category, error) {
 	category := Category{}
 

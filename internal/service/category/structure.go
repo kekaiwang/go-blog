@@ -23,3 +23,9 @@ type Meta struct {
 	Name string `json:"name"`
 	Type string `json:"type"`
 }
+
+type GetTagReq struct {
+	Link   string `json:"link`
+	Limit  int64  `json:"limit"`
+	Offset int64  `json:"offset"`
+}

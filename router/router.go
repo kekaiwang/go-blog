@@ -30,6 +30,7 @@ func SetupRouter(g *gin.Engine) {
 	g.GET("/article/:slug", api.GetArticleDetail)   // article detail
 	g.GET("/page/:slug", api.PageInfo)              //page info
 	g.GET("/categories/:link", api.GetCategoryList) //category list
+	g.GET("/tags/:link", api.GetTagList)            //tag list
 
 	v := g.Group("/admin")
 	{

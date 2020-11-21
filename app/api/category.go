@@ -11,9 +11,6 @@ import (
 )
 
 func GetCategoryList(ctx *gin.Context) {
-	fmt.Println(ctx.Param("link"))
-	fmt.Println(ctx.Query("type"))
-
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
 	var (
@@ -58,6 +55,68 @@ func GetCategoryList(ctx *gin.Context) {
 
 	meta := category.Meta{
 		Name: "分类",
+		Type: ctx.Query("type"),
+	}
+
+	ctx.HTML(http.StatusOK, "category.html", gin.H{
+		"data":          data.Data,
+		"Title":         data.Name,
+		"total":         data.Total,
+		"total_page":    tools.NewTotalPage(data.Total, limit),
+		"current_page":  page,
+		"next_page":     page + 1,
+		"previous_page": page - 1,
+		"meta":          meta,
+	})
+}
+
+func GetTagList(ctx *gin.Context) {
+	ctx.Header("Content-type", "text/html; charset=utf-8")
+
+	var (
+		link    = ctx.Param("link")
+		req     category.GetTagReq
+		page    int64
+		err     error
+		limit   = int64(10)
+		pageStr = ctx.Query("page")
+	)
+
+	if link == "" {
+		ctx.HTML(http.StatusOK, "error.html", gin.H{
+			"Title": "Kekai Wang",
+		})
+		return
+	}
+
+	if pageStr != "" {
+		page, err = strconv.ParseInt(pageStr, 10, 64)
+		if err != nil {
+			ctx.HTML(http.StatusOK, "error.html", nil)
+			return
+		}
+	}
+
+	if page == 0 {
+		page = 1
+	}
+	req.Offset = (page - 1) * limit
+	req.Limit = limit
+	fmt.Println(req)
+	req.Link = link
+
+	data, err := req.GetTagList()
+	if err != nil {
+		ctx.HTML(http.StatusOK, "error.html", gin.H{
+			"Title": "Kekai Wang",
+		})
+		return
+	}
+
+	fmt.Println(data)
+
+	meta := category.Meta{
+		Name: "标签",
 		Type: ctx.Query("type"),
 	}
 
