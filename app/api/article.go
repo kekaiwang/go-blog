@@ -24,7 +24,7 @@ func GetIndexArticle(ctx *gin.Context) {
 	if pageStr != "" {
 		page, err = strconv.ParseInt(pageStr, 10, 32)
 		if err != nil {
-			// ctx.Redirect(http.StatusNotFound, "/404")
+			ctx.HTML(http.StatusOK, "error.html", nil)
 		}
 	}
 
