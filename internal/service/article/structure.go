@@ -49,3 +49,8 @@ type ArticleTag struct {
 	Name       string `json:"name"`
 	RouterLink string `json:"router_link"`
 }
+
+// page info
+type PageReq struct {
+	Slug string `json:"slug"`
+}

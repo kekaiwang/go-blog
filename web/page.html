@@ -1,0 +1,14 @@
+{{ template "header" . }}
+<div class="main-content clearfix onelist-page">
+    <article class="main-content page-page" itemscope itemtype="http://schema.org/Article">
+        <div class="post-header">
+            {{if eq .Title "about.html"}}
+            <img style="width: 100px;" src="https://mail.wangkekai.cn/37c5b9f0875c22ddf214c53ca5985d1a" />
+            {{end}}
+            <h1 class="post-title" itemprop="name headline">{{.info.Name}}</h1></div>
+            <div id="post-content" class="post-content" itemprop="articleBody">
+                {{.info.Content}}
+            </div>
+    </article>
+</div>
+{{ template "foot" . }}

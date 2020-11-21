@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -26,6 +25,7 @@ func GetIndexArticle(ctx *gin.Context) {
 		if err != nil {
 			ctx.HTML(http.StatusOK, "error.html", nil)
 		}
+		return
 	}
 
 	if page == 0 {
@@ -35,10 +35,18 @@ func GetIndexArticle(ctx *gin.Context) {
 	req.Limit = limit
 
 	data, err := req.GetArticleList()
+	if err != nil {
+		ctx.HTML(http.StatusOK, "error.html", gin.H{
+			"Title": "Kekai Wang",
+		})
+		return
+	}
+
 	ctx.HTML(http.StatusOK, "index.html", gin.H{
 		"article":      data.Data,
 		"current_page": page,
 		"total":        data.Total,
+		"Title":        "Kekai Wang's blog",
 	})
 }
 
@@ -52,10 +60,17 @@ func GetArticleDetail(ctx *gin.Context) {
 
 	req.Slug = ctx.Param("slug")
 
-	data, _ := req.ArticleDetail()
-	fmt.Println(data)
+	data, err := req.ArticleDetail()
+	if err != nil {
+		ctx.HTML(http.StatusOK, "error.html", gin.H{
+			"Title": "Kekai Wang",
+		})
+		return
+	}
+
 	ctx.HTML(http.StatusOK, "article.html", gin.H{
-		"info": data,
-		"tags": data.Tag,
+		"info":  data,
+		"tags":  data.Tag,
+		"Title": data.Title,
 	})
 }

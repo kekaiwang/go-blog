@@ -21,7 +21,9 @@ func SetupRouter(g *gin.Engine) {
 	g.NoRoute(func(c *gin.Context) {
 		c.Header("Content-type", "text/html; charset=utf-8")
 
-		c.HTML(http.StatusNotFound, "404.html", nil)
+		c.HTML(http.StatusNotFound, "404.html", gin.H{
+			"Title": "Kekai Wang's blog",
+		})
 	})
 
 	g.GET("/", api.GetIndexArticle)               // index page

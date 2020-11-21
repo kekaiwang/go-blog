@@ -4,9 +4,36 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/kekaiwang/go-blog/internal/service/page"
 )
 
 func PageInfo(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
-	ctx.HTML(http.StatusOK, "error.html", nil)
+
+	var (
+		slug = ctx.Param("slug")
+		req  page.PageReq
+	)
+
+	if slug == "" {
+		ctx.HTML(http.StatusOK, "error.html", gin.H{
+			"Title": "Kekai Wang",
+		})
+		return
+	}
+
+	req.Slug = slug
+
+	data, err := req.GetPageInfo()
+	if err != nil {
+		ctx.HTML(http.StatusOK, "error.html", gin.H{
+			"Title": "Kekai Wang",
+		})
+		return
+	}
+
+	ctx.HTML(http.StatusOK, "page.html", gin.H{
+		"info":  data,
+		"Title": data.Slug,
+	})
 }

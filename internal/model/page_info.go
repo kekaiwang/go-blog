@@ -32,3 +32,15 @@ func (pi *PageInfo) TableName() string {
 func (pi *PageInfo) Create(pageInfo *PageInfo) error {
 	return drives.BlogDB.Create(pageInfo).Error
 }
+
+//GetPageBySlug
+func (pi *PageInfo) GetPageBySlug(slug string) (*PageInfo, error) {
+	page := &PageInfo{}
+
+	err := drives.BlogDB.Table(pi.TableName()).Where("slug = ? ", slug).First(&page).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return page, nil
+}
