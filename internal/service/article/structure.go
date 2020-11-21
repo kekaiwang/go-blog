@@ -1,5 +1,7 @@
 package article
 
+import "html/template"
+
 // Index page
 type GetIndexArticleReq struct {
 	Page   int64 `json:"page"`
@@ -34,7 +36,7 @@ type ArticleDetailRes struct {
 	Thumb        string        `json:"thumb"`
 	Slug         string        `json:"slug"`
 	Excerpt      string        `json:"excerpt"`
-	Content      string        `json:"content"`
+	Content      template.HTML `json:"content"`
 	DisplayTime  string        `json:"display_time"`
 	Next         string        `json:"next"`
 	Previous     string        `json:"previous"`

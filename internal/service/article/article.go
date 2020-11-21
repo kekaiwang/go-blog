@@ -1,6 +1,10 @@
 package article
 
 import (
+	"html/template"
+	"strconv"
+	"strings"
+
 	"github.com/kekaiwang/go-blog/internal/model"
 )
 
@@ -72,8 +76,16 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 	}
 
 	// 2. get tags
+	tIds := strings.Split(article.TagIds, ",")
+	var tagIds []int
+
+	for _, val := range tIds {
+		id, _ := strconv.Atoi(val)
+		tagIds = append(tagIds, id)
+	}
+
 	var t model.Tag
-	tags, err := t.GetTagByIds(article.TagIds)
+	tags, err := t.GetTagByIds(tagIds)
 	if err != nil {
 		return nil, err
 	}
@@ -95,14 +107,15 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 		catg = &model.Category{}
 	}
 
-	timeStr := article.DisplayTime.Format("2006-01-02")
+	strContent := template.HTML(article.Content)
 
+	timeStr := article.DisplayTime.Format("2006-01-02")
 	res = &ArticleDetailRes{
 		Title:        article.Title,
 		Thumb:        article.Thumb,
 		Slug:         article.Thumb,
 		Excerpt:      article.Excerpt,
-		Content:      article.Content,
+		Content:      strContent,
 		DisplayTime:  timeStr,
 		Next:         article.Next,
 		Previous:     article.Previous,
