@@ -61,5 +61,6 @@ func initResource() {
 
 func add(in int) (out int) {
 	out = in + 1
+
 	return
 }
