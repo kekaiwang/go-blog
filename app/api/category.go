@@ -10,6 +10,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/tools"
 )
 
+// GetCategoryList.
 func GetCategoryList(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
@@ -70,6 +71,7 @@ func GetCategoryList(ctx *gin.Context) {
 	})
 }
 
+// GetTagList.
 func GetTagList(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
@@ -102,7 +104,6 @@ func GetTagList(ctx *gin.Context) {
 	}
 	req.Offset = (page - 1) * limit
 	req.Limit = limit
-	fmt.Println(req)
 	req.Link = link
 
 	data, err := req.GetTagList()
@@ -112,8 +113,6 @@ func GetTagList(ctx *gin.Context) {
 		})
 		return
 	}
-
-	fmt.Println(data)
 
 	meta := category.Meta{
 		Name: "标签",

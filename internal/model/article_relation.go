@@ -18,12 +18,12 @@ func (ar *ArticleRelation) TableName() string {
 	return `article_relation`
 }
 
-//Create insert articleRelation
+// Create insert articleRelation
 func (ar *ArticleRelation) Create(articleRelation *ArticleRelation) error {
 	return drives.BlogDB.Create(articleRelation).Error
 }
 
-//GetARByTagId
+// GetARByTagId
 func (ar *ArticleRelation) GetARByTagId(id int64) ([]int, error) {
 	articleIds := []int{}
 

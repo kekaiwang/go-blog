@@ -32,9 +32,14 @@ func SetupRouter(g *gin.Engine) {
 	g.GET("/categories/:link", api.GetCategoryList) //category list
 	g.GET("/tags/:link", api.GetTagList)            //tag list
 
-	v := g.Group("/admin")
+	admin := g.Group("/admin")
 	{
-		v.POST("/create/article", func(c *gin.Context) {
+		admin.POST("/login", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{
+				"message": "success",
+			})
+		})
+		admin.POST("/create/article", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
 				"message": "success",
 			})

@@ -113,7 +113,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 	res = &ArticleDetailRes{
 		Title:        article.Title,
 		Thumb:        article.Thumb,
-		Slug:         article.Thumb,
+		Slug:         article.Slug,
 		Excerpt:      article.Excerpt,
 		Content:      strContent,
 		DisplayTime:  timeStr,
