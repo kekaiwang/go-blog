@@ -15,3 +15,6 @@
 # vendor/
 
 config/config.prod.yaml
+
+*.DS_Store
+*.idea
