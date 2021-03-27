@@ -14,8 +14,9 @@ import (
 
 type Config struct {
 	App struct {
-		Env  string `yaml:"env"`
-		Name string `yaml:"name"`
+		Env   string `yaml:"env"`
+		Name  string `yaml:"name"`
+		Token string `yaml:"token"`
 	} `yaml:"app"`
 
 	Mysql struct {

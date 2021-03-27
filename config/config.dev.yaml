@@ -1,6 +1,7 @@
 app:
   env: dev
   name: kekai's blog
+  token: b8700fbb63d18d29164285cbb996c5f3
 
 mysql:
   uri: root:@tcp(localhost)/goblog?parseTime=true

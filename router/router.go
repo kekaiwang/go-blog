@@ -4,7 +4,9 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/kekaiwang/go-blog/app/admin"
 	"github.com/kekaiwang/go-blog/app/api"
+	"github.com/kekaiwang/go-blog/router/handlers"
 	"github.com/kekaiwang/go-blog/router/middleware"
 )
 
@@ -32,14 +34,11 @@ func SetupRouter(g *gin.Engine) {
 	g.GET("/categories/:link", api.GetCategoryList) //category list
 	g.GET("/tags/:link", api.GetTagList)            //tag list
 
-	admin := g.Group("/admin")
+	v := g.Group("/admin")
 	{
-		admin.POST("/login", func(c *gin.Context) {
-			c.JSON(http.StatusOK, gin.H{
-				"message": "success",
-			})
-		})
-		admin.POST("/create/article", func(c *gin.Context) {
+		v.POST("/login", admin.Login)
+		v.GET("/info", handlers.Verify, admin.Info)
+		v.POST("/create/article", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
 				"message": "success",
 			})

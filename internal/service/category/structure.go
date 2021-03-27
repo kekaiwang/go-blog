@@ -1,7 +1,7 @@
 package category
 
 type GetCategoryReq struct {
-	Link   string `json:"link`
+	Link   string `json:"link"`
 	Limit  int64  `json:"limit"`
 	Offset int64  `json:"offset"`
 }
@@ -25,7 +25,7 @@ type Meta struct {
 }
 
 type GetTagReq struct {
-	Link   string `json:"link`
+	Link   string `json:"link"`
 	Limit  int64  `json:"limit"`
 	Offset int64  `json:"offset"`
 }
