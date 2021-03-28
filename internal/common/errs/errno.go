@@ -8,4 +8,5 @@ var (
 	ErrBindJson       = &ErrNo{Code: 1002, Message: "Bind json error"}
 	ErrRecordNotFound = &ErrNo{Code: 1003, Message: "Record not found"}
 	ErrQueryModel     = &ErrNo{Code: 1004, Message: "Query model err."}
+	ErrUpdateRecord   = &ErrNo{Code: 1005, Message: "update model err."}
 )

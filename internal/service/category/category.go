@@ -58,7 +58,7 @@ func (req *GetTagReq) GetTagList() (*GetCategoryRes, error) {
 
 	// 2.get article relation
 	var ar model.ArticleRelation
-	aRelation, err := ar.GetARByTagId(tag.Id)
+	aRelation, err := ar.GetARByTagId(tag.ID)
 
 	// 3. get article
 	var a model.Article
