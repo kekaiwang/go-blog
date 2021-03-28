@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"math"
+	"strconv"
 )
 
 func NewTotalPage(total, pagesize int64) int {
@@ -25,4 +26,23 @@ func MD5(name, password, salt string) string {
 	io.WriteString(pass, password)
 
 	return fmt.Sprintf("%x", pass.Sum(nil))
+}
+
+func NewLimitOffset(limitStr, pageStr string) (int64, int64, int64) {
+	var (
+		offset int64
+		page   int64
+		limit  int64
+	)
+
+	page, _ = strconv.ParseInt(pageStr, 10, 64)
+	limit, _ = strconv.ParseInt(limitStr, 10, 64)
+
+	if page == 0 {
+		page = 1
+	}
+
+	offset = (page - 1) * limit
+
+	return offset, page, limit
 }
