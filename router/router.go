@@ -43,6 +43,12 @@ func SetupRouter(g *gin.Engine) {
 		v.GET("/tag/list", handlers.Verify, admin.GetTagList)
 		v.POST("/tag/update", handlers.Verify, admin.UpdateTag)
 		v.PUT("/tag/create", handlers.Verify, admin.CreateTag)
+
+		// category
+		v.GET("/category/list", handlers.Verify, admin.AdminCategoryList)
+		v.POST("/category/update", handlers.Verify, admin.UpdateCategory)
+		v.PUT("/category/create", handlers.Verify, admin.CreateCategory)
+
 		v.POST("/create/article", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
 				"message": "success",

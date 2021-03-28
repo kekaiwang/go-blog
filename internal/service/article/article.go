@@ -136,7 +136,7 @@ func getCategory() map[int64]*model.Category {
 
 	cMap := make(map[int64]*model.Category)
 	for _, c := range categories {
-		cMap[c.Id] = c
+		cMap[c.ID] = c
 	}
 
 	return cMap
