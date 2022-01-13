@@ -35,8 +35,8 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 	ser := &http.Server{
 		Addr:              ":8089",
 		Handler:           r,
-		ReadHeaderTimeout: 5 * time.Second,
-		WriteTimeout:      5 * time.Second,
+		ReadHeaderTimeout: 3 * time.Second,
+		WriteTimeout:      3 * time.Second,
 	}
 
 	go func(stopFunc context.Context, waitCtx *sync.WaitGroup) {
