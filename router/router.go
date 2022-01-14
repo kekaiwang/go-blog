@@ -24,7 +24,7 @@ func SetupRouter(g *gin.Engine) {
 		c.Header("Content-type", "text/html; charset=utf-8")
 
 		c.HTML(http.StatusNotFound, "404.html", gin.H{
-			"Title": "Kekai Wang's blog",
+			"Title": "Kekai Wang's blog | NOT FOUND",
 		})
 	})
 
@@ -33,8 +33,8 @@ func SetupRouter(g *gin.Engine) {
 	g.GET("/page/:slug", api.PageInfo)              //page info
 	g.GET("/categories/:link", api.GetCategoryList) //category list
 	g.GET("/tags/:link", api.GetTagList)            //tag list
-	g.GET("/tags/:link/", api.GetTagList)            //tag list
-	g.GET("/tags/:link/:name", api.GetTagList)            //tag list
+	g.GET("/tags/:link/", api.GetTagList)           //tag list
+	g.GET("/tags/:link/:name", api.GetTagList)      //tag list
 
 	v := g.Group("/admin")
 	{
