@@ -43,6 +43,18 @@ func (c *Category) GetAll() ([]*Category, error) {
 	return categories, nil
 }
 
+// GetAll
+func (c *Category) GetAllByWhere(query string, args []interface{}) ([]*Category, error) {
+	categories := []*Category{}
+
+	err := drives.BlogDB.Table(c.TableName()).Where(query, args...).Find(&categories).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return categories, nil
+}
+
 // GetCategoryByRouterLink
 func (c *Category) GetCategoryByRouterLink(routerLink string) (*Category, error) {
 	category := Category{}
