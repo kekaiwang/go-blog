@@ -80,3 +80,28 @@ func GetArticleDetail(ctx *gin.Context) {
 		"Title": data.Title,
 	})
 }
+
+// GetArticleDetail.
+func GetArticleDetailInfo(ctx *gin.Context) {
+	ctx.Header("Content-type", "text/html; charset=utf-8")
+
+	var (
+		req article.ArticleDetailReq
+	)
+
+	req.Slug = ctx.Param("slug")
+
+	data, err := req.ArticleDetail()
+	if err != nil {
+		ctx.HTML(http.StatusOK, "error.html", gin.H{
+			"Title": "Kekai Wang",
+		})
+		return
+	}
+
+	ctx.HTML(http.StatusOK, "article.html", gin.H{
+		"info":  data,
+		"tags":  data.Tag,
+		"Title": data.Title,
+	})
+}
