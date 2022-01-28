@@ -64,6 +64,24 @@ func AUpdateTag(c *gin.Context) {
 	return
 }
 
+// UpdateTag.
+func AUpdateTagNew(c *gin.Context) {
+	var req tag.UpdateTagRequest
+	if err := c.BindJSON(&req); err != nil {
+		ApiResponseErr(c, errs.ErrBindJson)
+		return
+	}
+
+	affectRow, err := req.UpdateTag()
+	if err != nil {
+		ApiResponseErr(c, err)
+		return
+	}
+
+	ApiResponseSuccess(c, affectRow)
+	return
+}
+
 func CreateTag(c *gin.Context) {
 	var req tag.CreateTagRequest
 	if err := c.BindJSON(&req); err != nil {
