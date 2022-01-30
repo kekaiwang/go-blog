@@ -64,3 +64,22 @@ func CreateCategory(c *gin.Context) {
 	return
 
 }
+
+// CreateCategoryNew.
+func CreateCategoryNew(c *gin.Context) {
+	var req category.CreateCategoryRequest
+	if err := c.ShouldBind(&req); err != nil {
+		ApiResponseErr(c, errs.ErrBindJson)
+		return
+	}
+
+	data, err := req.CreateCategory()
+	if err != nil {
+		ApiResponseErr(c, err)
+		return
+	}
+
+	ApiResponseSuccess(c, data)
+	return
+
+}
