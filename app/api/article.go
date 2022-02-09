@@ -56,52 +56,6 @@ func GetIndexArticle(ctx *gin.Context) {
 	})
 }
 
-func GetIndexArticleInfo(ctx *gin.Context) {
-	ctx.Header("Content-type", "text/html; charset=utf-8")
-	var (
-		req article.GetIndexArticleReq
-		// offset  int64
-		page    int64
-		err     error
-		limit   = int64(5)
-		pageStr = ctx.Query("page")
-	)
-
-	if pageStr != "" {
-		page, err = strconv.ParseInt(pageStr, 10, 64)
-
-		if err != nil {
-			ctx.HTML(http.StatusOK, "error.html", nil)
-
-			return
-		}
-	}
-
-	if page == 0 {
-		page = 1
-	}
-	req.Offset = (page - 1) * limit
-	req.Limit = limit
-
-	data, err := req.GetArticleList()
-	if err != nil {
-		ctx.HTML(http.StatusOK, "error.html", gin.H{
-			"Title": "Kekai Wang",
-		})
-		return
-	}
-
-	ctx.HTML(http.StatusOK, "index.html", gin.H{
-		"article":       data.Data,
-		"current_page":  page,
-		"total":         data.Total,
-		"total_page":    tools.NewTotalPage(data.Total, limit),
-		"Title":         "Kekai Wang's blog",
-		"next_page":     page + 1,
-		"previous_page": page - 1,
-	})
-}
-
 // GetArticleDetail.
 func GetArticleDetail(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
