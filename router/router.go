@@ -57,5 +57,11 @@ func SetupRouter(g *gin.Engine) {
 				"message": "success",
 			})
 		})
+
+		v.POST("/create/art", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{
+				"message": "success",
+			})
+		})
 	}
 }
