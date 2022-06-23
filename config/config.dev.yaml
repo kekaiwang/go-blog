@@ -4,10 +4,10 @@ app:
   token: b8700fbb63d18d29164285cbb996c5f3
 
 mysql:
-  uri: root:@tcp(localhost)/goblog?parseTime=true
+  uri: root:root@tcp(localhost)/goblog?parseTime=true
   host: localhost
   user: root
-  pass: 
+  pass: root
   max_idle_conns: 2
   max_open_conns: 5
   log_mode: true

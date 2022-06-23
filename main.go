@@ -39,6 +39,8 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 		WriteTimeout:      3 * time.Second,
 	}
 
+	format.PrintGreen("server start : http://127.0.0.1:8089")
+
 	go func(stopFunc context.Context, waitCtx *sync.WaitGroup) {
 		if err := gracehttp.Serve(ser); err != nil {
 			panic(err.Error())
@@ -57,10 +59,4 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 
 func initResource() {
 	drives.BlogDBInit()
-}
-
-func add(in int) (out int) {
-	out = in + 1
-
-	return
 }

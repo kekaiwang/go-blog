@@ -4,7 +4,6 @@ import (
 	"sync"
 	"time"
 
-	//import mysql driver
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/kekaiwang/go-blog/config"
@@ -15,16 +14,17 @@ var (
 )
 
 func BlogDBInit() {
-	initBLogDB()
+	initBlogDB()
 }
 
-func initBLogDB() {
+func initBlogDB() {
 	var (
 		conf       = config.Get()
 		blogDBOnce sync.Once
+		initDB     func()
 	)
 
-	initDB := func() {
+	initDB = func() {
 		db, err := gorm.Open("mysql", conf.Mysql.Uri)
 		if err != nil {
 			panic(err)
