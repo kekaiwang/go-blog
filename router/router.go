@@ -35,7 +35,6 @@ func SetupRouter(g *gin.Engine) {
 	g.GET("/tags/:link", api.GetTagList)            //tag list
 	g.GET("/tags/:link/", api.GetTagList)           //tag list
 	g.GET("/tags/:link/:name", api.GetTagList)      //tag list
-	g.GET("/tags/:link/:name", api.GetTagList)      //tag list
 
 	v := g.Group("/admin")
 	{
