@@ -46,18 +46,10 @@ func Secure(c *gin.Context) {
 	if c.Request.TLS != nil {
 		c.Header("Strict-Transport-Security", "max-age=31536000")
 	}
-
-	// Also consider adding Content-Security-Policy headers
-	// c.Header("Content-Security-Policy", "script-src 'self' https://cdnjs.cloudflare.com")
 }
 
 // 跨域相关
 func OrderAccess(c *gin.Context) {
-	// origin := c.GetHeader("origin")
-	// if tools.StringInArray(origin, "") {
-	// 	c.Header("Access-Control-Allow-Origin", origin)
-	// }
-
 	c.Header("Access-Control-Allow-Credentials", "true")
 	c.Header("Access-Control-Allow-Methods", "GET, POST, PUT")
 	c.Header("Access-Control-Allow-Headers", "Content-Type, X-Requested-With, User-Agent, Platform, Qsc-Token, Cache-Control")
