@@ -47,6 +47,7 @@ var (
 	once   sync.Once
 )
 
+// Get. get config by key
 func Get() Config {
 	once.Do(func() {
 		configFile := configPath[Env] + "config." + Env + ".yaml"

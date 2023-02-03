@@ -1,30 +1,30 @@
 /**
- * 格式化-输出
+ * formatter print
  */
 package format
 
 import "fmt"
 
 /**
- * 输出绿色字符串
- * @params str	待输出的字符串
+ * print green string
+ * @params str
  */
 func PrintGreen(str string) {
 	printColor(str, 32)
 }
 
 /**
- * 输出红色字符串
- * @params str	待输出的字符串
+ * print red string
+ * @params str
  */
 func PrintRed(str string) {
 	printColor(str, 31)
 }
 
 /**
- * 输出待颜色字符串
- * @params str	待输出的字符串
- * @params color 待输出颜色
+ * print color string
+ * @params str
+ * @params color
  */
 func printColor(str string, color int32) {
 	fmt.Printf("%c[0;0;%vm%s%c[0m\n", 0x1B, color, str, 0x1B)
