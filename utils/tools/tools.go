@@ -28,6 +28,7 @@ func MD5(name, password, salt string) string {
 	return fmt.Sprintf("%x", pass.Sum(nil))
 }
 
+// NewLimitOffset. build page size
 func NewLimitOffset(limitStr, pageStr string) (int64, int64, int64) {
 	var (
 		offset int64

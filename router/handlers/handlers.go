@@ -8,6 +8,7 @@ import (
 	"github.com/kekaiwang/go-blog/config"
 )
 
+// Verify. auth
 func Verify(ctx *gin.Context) {
 	token := ctx.GetHeader("X-Token")
 	if token != config.Get().App.Token {
