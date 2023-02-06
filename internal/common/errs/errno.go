@@ -10,4 +10,5 @@ var (
 	ErrQueryModel          = &ErrNo{Code: 1004, Message: "Query model err."}
 	ErrUpdateRecord        = &ErrNo{Code: 1005, Message: "update model err."}
 	ErrRecordAlreadyExists = &ErrNo{Code: 1006, Message: "Already exists."}
+	ErrRecordyExists       = &ErrNo{Code: 1006, Message: "Already exists."}
 )
