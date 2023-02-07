@@ -5,6 +5,7 @@ type ErrNo struct {
 	Message string
 }
 
+// Error. error msg
 func (err *ErrNo) Error() string {
 	return err.Message
 }
