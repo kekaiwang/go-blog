@@ -61,6 +61,7 @@ func (req *GetIndexArticleReq) GetArticleList() (*IndexArticleRes, error) {
 	return &res, nil
 }
 
+// ArticleDetail.
 func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 
 	var (
@@ -127,6 +128,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 	return res, nil
 }
 
+// getCategory.
 func getCategory() map[int64]*model.Category {
 	var c model.Category
 	categories, err := c.GetAll()
