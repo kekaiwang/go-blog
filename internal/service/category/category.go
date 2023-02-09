@@ -157,6 +157,7 @@ func (req *UpdateCategoryRequest) UpdateCategory() (int64, *errs.ErrNo) {
 	return affectRow, nil
 }
 
+// CreateCategory. create category
 func (req *CreateCategoryRequest) CreateCategory() (*model.Category, *errs.ErrNo) {
 	// 1. check repeat
 	var cate model.Category
