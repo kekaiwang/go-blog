@@ -19,7 +19,7 @@ func (req *GetCategoryReq) GetCategoryList() (*GetCategoryRes, error) {
 
 	// 2. get article
 	var a model.Article
-	articles, err := a.GetArticlesByCTId(" category_id = ? AND is_draft = ? ", []interface{}{cate.ID, model.UnDraft}, req.Limit, req.Offset)
+	articles, err := a.GetArticlesByCTID(" category_id = ? AND is_draft = ? ", []interface{}{cate.ID, model.UnDraft}, req.Limit, req.Offset)
 	if err != nil {
 		return nil, err
 	}
@@ -64,10 +64,13 @@ func (req *GetTagReq) GetTagList() (*GetCategoryRes, error) {
 	// 2.get article relation
 	var ar model.ArticleRelation
 	aRelation, err := ar.GetARByTagId(tag.ID)
+	if err != nil {
+		return nil, err
+	}
 
 	// 3. get article
 	var a model.Article
-	articles, err := a.GetArticlesByCTId("id in (?) and is_draft = ? ", []interface{}{aRelation, model.UnDraft}, req.Limit, req.Offset)
+	articles, err := a.GetArticlesByCTID("id in (?) and is_draft = ? ", []interface{}{aRelation, model.UnDraft}, req.Limit, req.Offset)
 	if err != nil {
 		return nil, err
 	}
