@@ -187,3 +187,31 @@ func (req *CreateCategoryRequest) CreateCategory() (*model.Category, *errs.ErrNo
 
 	return &cate, nil
 }
+
+// CreateCategory. create category
+func (req *CreateCategoryRequest) CreateCategoryInfo() (*model.Category, *errs.ErrNo) {
+	// 1. check repeat
+	var cate model.Category
+	num, err := cate.CountCategory(" name = ? ", []interface{}{req.Name})
+	if err != nil {
+		return nil, errs.ErrQueryModel
+	}
+
+	if num > 0 {
+		return nil, errs.ErrRecordAlreadyExists
+	}
+
+	// 2. create
+	cate.Name = req.Name
+	cate.RouterLink = req.RouterLink
+	cate.Status = req.Status
+	cate.Created = time.Now()
+	cate.Updated = time.Now()
+
+	err = cate.Create()
+	if err != nil {
+		return nil, errs.ErrQueryModel
+	}
+
+	return &cate, nil
+}
