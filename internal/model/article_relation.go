@@ -23,6 +23,11 @@ func (ar *ArticleRelation) Create(articleRelation *ArticleRelation) error {
 	return drives.BlogDB.Create(articleRelation).Error
 }
 
+// Create insert articleRelation
+func (ar *ArticleRelation) CreateArticle(articleRelation *ArticleRelation) error {
+	return drives.BlogDB.Create(articleRelation).Error
+}
+
 // GetARByTagId
 func (ar *ArticleRelation) GetARByTagId(id int64) ([]int, error) {
 	articleIds := []int{}
