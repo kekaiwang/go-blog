@@ -40,8 +40,8 @@ func (ar *ArticleRelation) GetARByTagId(id int64) ([]int, error) {
 	return articleIds, nil
 }
 
-// GetARByTagGId
-func (ar *ArticleRelation) GetARByTagGId(id int64) ([]int, error) {
+// GetARByTagID
+func (ar *ArticleRelation) GetARByTagID(id int64) ([]int, error) {
 	articleIds := []int{}
 
 	err := drives.BlogDB.Table(ar.TableName()).Where("tag_id = ? ", id).Pluck("article_id", &articleIds).Error
