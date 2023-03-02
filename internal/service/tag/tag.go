@@ -85,20 +85,3 @@ func (t *CreateTagRequest) CreateTag() (*model.Tag, *errs.ErrNo) {
 
 	return &tag, nil
 }
-
-func (t *CreateTagRequest) CreateTagNew() (*model.Tag, *errs.ErrNo) {
-	var tag model.Tag
-
-	tag.Name = t.Name
-	tag.Status = t.Status
-	tag.RouterLink = t.RouterLink
-	tag.Created = time.Now()
-	tag.Updated = time.Now()
-
-	err := tag.Create()
-	if err != nil {
-		return nil, errs.ErrQueryModel
-	}
-
-	return &tag, nil
-}
