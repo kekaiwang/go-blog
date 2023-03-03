@@ -48,7 +48,7 @@ func Secure(c *gin.Context) {
 	}
 }
 
-// 跨域相关
+// across about
 func OrderAccess(c *gin.Context) {
 	c.Header("Access-Control-Allow-Credentials", "true")
 	c.Header("Access-Control-Allow-Methods", "GET, POST, PUT")
