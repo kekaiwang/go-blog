@@ -143,19 +143,3 @@ func getCategory() map[int64]*model.Category {
 
 	return cMap
 }
-
-// getCategoryNew.
-func getCategoryNew() map[int64]*model.Category {
-	var c model.Category
-	categories, err := c.GetAll()
-	if err != nil {
-		return nil
-	}
-
-	cMap := make(map[int64]*model.Category)
-	for _, c := range categories {
-		cMap[c.ID] = c
-	}
-
-	return cMap
-}
