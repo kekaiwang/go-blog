@@ -70,8 +70,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 	)
 
 	// 1. get article info
-	var a model.Article
-	article, err := a.GetArticleBySlug(req.Slug)
+	article, err := getArticleSlug(req.Slug)
 	if err != nil {
 		return nil, err
 	}
@@ -142,4 +141,15 @@ func getCategory() map[int64]*model.Category {
 	}
 
 	return cMap
+}
+
+func getArticleSlug(slug string) (model.Article, error) {
+	// 1. get article info
+	var a model.Article
+	article, err := a.GetArticleBySlug(slug)
+	if err != nil {
+		return a, err
+	}
+
+	return *article, nil
 }
