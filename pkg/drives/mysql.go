@@ -17,6 +17,7 @@ func BlogDBInit() {
 	initBlogDB()
 }
 
+// layze init
 func initBlogDB() {
 	var (
 		conf       = config.Get()

@@ -10,6 +10,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/tools"
 )
 
+// login.
 func (u LoginRequest) Login(ctx *gin.Context) (*LoginResponse, *errs.ErrNo) {
 	fmt.Println(ctx.ClientIP())
 
@@ -40,6 +41,7 @@ func (u LoginRequest) Login(ctx *gin.Context) (*LoginResponse, *errs.ErrNo) {
 	return res, nil
 }
 
+// admin login
 func (u LoginRequest) AdminLogin(ctx *gin.Context) (*LoginResponse, *errs.ErrNo) {
 	fmt.Println(ctx.ClientIP())
 
