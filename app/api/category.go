@@ -55,7 +55,7 @@ func GetCategoryList(ctx *gin.Context) {
 	}
 
 	meta := category.Meta{
-		Name: "分类",
+		Name: "分类|category",
 		Type: ctx.Query("type"),
 	}
 
@@ -115,7 +115,7 @@ func GetTagList(ctx *gin.Context) {
 	}
 
 	meta := category.Meta{
-		Name: "标签",
+		Name: "标签|tag",
 		Type: ctx.Query("type"),
 	}
 
