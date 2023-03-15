@@ -143,6 +143,7 @@ func getCategory() map[int64]*model.Category {
 	return cMap
 }
 
+// getArticleSlug.
 func getArticleSlug(slug string) (model.Article, error) {
 	// 1. get article info
 	var a model.Article

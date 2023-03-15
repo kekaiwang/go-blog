@@ -7,6 +7,7 @@ import (
 	"github.com/kekaiwang/go-blog/internal/model"
 )
 
+// GetTagList.
 func (t *GetTagListRequest) GetTagList() (*GetTagListResponse, *errs.ErrNo) {
 	var (
 		// response *GetTagListResponse
@@ -69,6 +70,7 @@ func (t *UpdateTagRequest) UpdateTag() (int64, *errs.ErrNo) {
 	return affectRow, nil
 }
 
+// CreateTag.
 func (t *CreateTagRequest) CreateTag() (*model.Tag, *errs.ErrNo) {
 	var tag model.Tag
 
