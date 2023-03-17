@@ -32,6 +32,7 @@ func (req *GetIndexArticleReq) GetArticleList() (*IndexArticleRes, error) {
 		return nil, err
 	}
 
+	// rang article list
 	for _, val := range articles {
 		catg, ok := cMap[val.CategoryId]
 		if !ok {
@@ -90,6 +91,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 		return nil, err
 	}
 
+	// formatter tag info
 	for _, val := range tags {
 		tag := &ArticleTag{
 			Name:       val.Name,
