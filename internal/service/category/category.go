@@ -30,17 +30,8 @@ func (req *GetCategoryReq) GetCategoryList() (*GetCategoryRes, error) {
 		return nil, err
 	}
 
-	var cateArticle []*CategoryArticle
-
-	for _, v := range articles {
-		ca := &CategoryArticle{
-			Title:       v.Title,
-			Slug:        v.Slug,
-			DisplayTime: v.DisplayTime.Format("2006-01-02 15:04"),
-		}
-
-		cateArticle = append(cateArticle, ca)
-	}
+	// formatter category article
+	cateArticle := formatterCateArticle(articles)
 
 	res = &GetCategoryRes{
 		Data:  cateArticle,
@@ -81,6 +72,18 @@ func (req *GetTagReq) GetTagList() (*GetCategoryRes, error) {
 		return nil, err
 	}
 
+	cateArticle := formatterCateArticle(articles)
+
+	res = &GetCategoryRes{
+		Data:  cateArticle,
+		Name:  tag.Name,
+		Total: total,
+	}
+
+	return res, nil
+}
+
+func formatterCateArticle(articles []*model.Article) []*CategoryArticle {
 	var cateArticle []*CategoryArticle
 
 	for _, v := range articles {
@@ -93,13 +96,7 @@ func (req *GetTagReq) GetTagList() (*GetCategoryRes, error) {
 		cateArticle = append(cateArticle, ca)
 	}
 
-	res = &GetCategoryRes{
-		Data:  cateArticle,
-		Name:  tag.Name,
-		Total: total,
-	}
-
-	return res, nil
+	return cateArticle
 }
 
 // GetAdminCategoryList.
