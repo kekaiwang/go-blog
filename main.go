@@ -14,6 +14,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/format"
 )
 
+// main
 func main() {
 	initResource()
 	wg := sync.WaitGroup{}
