@@ -26,6 +26,7 @@ func main() {
 	wg.Wait()
 }
 
+// web server
 func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 	wg.Add(1)
 
