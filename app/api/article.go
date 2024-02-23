@@ -9,7 +9,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/tools"
 )
 
-// GetIndexArticle.
+// GetIndexArticle. get index article list
 func GetIndexArticle(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 	var (
@@ -56,7 +56,7 @@ func GetIndexArticle(ctx *gin.Context) {
 	})
 }
 
-// GetArticleDetail.
+// GetArticleDetail. get article detail info
 func GetArticleDetail(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
@@ -81,7 +81,7 @@ func GetArticleDetail(ctx *gin.Context) {
 	})
 }
 
-// GetArticleDetail.
+// GetArticleDetail. get article detail info
 func GetArticleDetailInfo(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 

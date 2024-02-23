@@ -19,9 +19,11 @@ func main() {
 	initResource()
 	wg := sync.WaitGroup{}
 
+	// init context
 	stopCtx, stopFunc := context.WithCancel(context.Background())
 	webServer(stopCtx, &wg)
 
+	// grace stop
 	core.RegisterSignal(stopFunc)
 
 	wg.Wait()
