@@ -7,6 +7,7 @@ import (
 	"github.com/kekaiwang/go-blog/internal/service/page"
 )
 
+// PageInfo.
 func PageInfo(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
