@@ -12,6 +12,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+// config stuct
 type Config struct {
 	App struct {
 		Env   string `yaml:"env"`
