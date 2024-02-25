@@ -71,7 +71,7 @@ func GetCategoryList(ctx *gin.Context) {
 	})
 }
 
-// GetTagList.
+// GetTagList. get tag list
 func GetTagList(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
