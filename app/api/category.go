@@ -10,7 +10,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/tools"
 )
 
-// GetCategoryList.
+// GetCategoryList. get category list
 func GetCategoryList(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
