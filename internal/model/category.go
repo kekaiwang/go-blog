@@ -91,7 +91,7 @@ func (c *Category) CountCategory(query string, args []interface{}) (int64, error
 	return total, nil
 }
 
-// GetCategory.
+// GetCategory. get catetory
 func (c *Category) GetCategory(query string, args []interface{}) (*Category, error) {
 	category := &Category{}
 	err := drives.BlogDB.Table(c.TableName()).Where(query, args...).First(&category).Error
@@ -102,6 +102,7 @@ func (c *Category) GetCategory(query string, args []interface{}) (*Category, err
 	return category, nil
 }
 
+// UpdateCategory. update category
 func (c *Category) UpdateCategory() (int64, error) {
 	result := drives.BlogDB.Model(&c).Update(c)
 	if result.Error != nil {
