@@ -28,12 +28,12 @@ func (pi *PageInfo) TableName() string {
 	return `page_info`
 }
 
-//Create insert pageInfo
+// Create insert pageInfo
 func (pi *PageInfo) Create(pageInfo *PageInfo) error {
 	return drives.BlogDB.Create(pageInfo).Error
 }
 
-//GetPageBySlug
+// GetPageBySlug get page by slug
 func (pi *PageInfo) GetPageBySlug(slug string) (*PageInfo, error) {
 	page := &PageInfo{}
 
