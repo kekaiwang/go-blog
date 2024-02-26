@@ -6,6 +6,7 @@ import (
 	"github.com/kekaiwang/go-blog/pkg/drives"
 )
 
+// Category category model
 type Category struct {
 	ID          int64     `gorm:"id" json:"id"`
 	Name        string    `gorm:"name" json:"name"`                 //名称
