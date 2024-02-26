@@ -44,7 +44,7 @@ func (c *Category) GetAll() ([]*Category, error) {
 	return categories, nil
 }
 
-// GetAll
+// GetAll get all by where
 func (c *Category) GetAllByWhere(query string, args []interface{}) ([]*Category, error) {
 	categories := []*Category{}
 
@@ -56,7 +56,7 @@ func (c *Category) GetAllByWhere(query string, args []interface{}) ([]*Category,
 	return categories, nil
 }
 
-// GetCategoryByRouterLink
+// GetCategoryByRouterLink get category by router link info
 func (c *Category) GetCategoryByRouterLink(routerLink string) (*Category, error) {
 	category := Category{}
 
