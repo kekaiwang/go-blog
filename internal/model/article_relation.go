@@ -2,6 +2,7 @@ package model
 
 import "github.com/kekaiwang/go-blog/pkg/drives"
 
+// ArticleRelation. article relation model
 type ArticleRelation struct {
 	Id        int64 `gorm:"primary_key"`
 	ArticleId int64 `gorm:"article_id"` // 文章ID
