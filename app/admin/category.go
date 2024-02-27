@@ -7,7 +7,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/tools"
 )
 
-// AdminCategoryList.
+// AdminCategoryList. admin category list
 func AdminCategoryList(c *gin.Context) {
 	var (
 		req   category.AdminCategoryListRequest
@@ -25,7 +25,6 @@ func AdminCategoryList(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, data)
-	return
 }
 
 // UpdateCategory.
