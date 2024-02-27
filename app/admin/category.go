@@ -27,7 +27,7 @@ func AdminCategoryList(c *gin.Context) {
 	ApiResponseSuccess(c, data)
 }
 
-// UpdateCategory.
+// UpdateCategory. update admin category
 func UpdateCategory(c *gin.Context) {
 	var req category.UpdateCategoryRequest
 	if err := c.ShouldBind(&req); err != nil {
