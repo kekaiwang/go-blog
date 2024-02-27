@@ -8,6 +8,7 @@ import (
 	"strconv"
 )
 
+// NewTotalPage. new page
 func NewTotalPage(total, pagesize int64) int {
 	pages := float64(pagesize)
 	totalp := float64(total)
@@ -17,6 +18,7 @@ func NewTotalPage(total, pagesize int64) int {
 	return int(totalPage)
 }
 
+// MD5. md5 func
 func MD5(name, password, salt string) string {
 	saltString := "!w@k#k"
 	pass := md5.New()
