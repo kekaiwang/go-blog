@@ -7,12 +7,14 @@ import (
 	"github.com/kekaiwang/go-blog/internal/common/errs"
 )
 
+// Response. res struct
 type Response struct {
 	Data interface{} `json:"data"`
 	Msg  string      `json:"msg"`
 	Code int64       `json:"code"`
 }
 
+// ApiResponseSuccess.
 func ApiResponseSuccess(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, Response{
 		Data: data,
