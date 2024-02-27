@@ -23,6 +23,7 @@ func ApiResponseSuccess(c *gin.Context, data interface{}) {
 	})
 }
 
+// ApiResponseErr. api res err
 func ApiResponseErr(c *gin.Context, err *errs.ErrNo) {
 	c.JSON(http.StatusOK, Response{
 		Data: nil,
