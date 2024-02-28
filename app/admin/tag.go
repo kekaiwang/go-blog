@@ -7,7 +7,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/tools"
 )
 
-// GetTagList.
+// GetTagList.  get tag list
 func GetTagList(c *gin.Context) {
 	var (
 		req   tag.GetTagListRequest
@@ -25,7 +25,26 @@ func GetTagList(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, data)
-	return
+}
+
+// GetTagList.  get tag list
+func GetTagLists(c *gin.Context) {
+	var (
+		req   tag.GetTagListRequest
+		limit = c.Query("limit")
+		page  = c.Query("page")
+	)
+
+	req.Offset, req.Page, req.Limit = tools.NewLimitOffset(limit, page)
+	req.Name = c.Query("name")
+
+	data, err := req.GetTagList()
+	if err != nil {
+		ApiResponseErr(c, err)
+		return
+	}
+
+	ApiResponseSuccess(c, data)
 }
 
 // UpdateTag.
