@@ -167,6 +167,7 @@ func GetNewTagList(ctx *gin.Context) {
 	req.Limit = limit
 	req.Link = link
 
+	// get tag list
 	data, err := req.GetTagList()
 	if err != nil {
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
