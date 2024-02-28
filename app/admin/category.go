@@ -42,7 +42,6 @@ func UpdateCategory(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, affectRow)
-	return
 }
 
 // CreateCategory.
@@ -60,8 +59,6 @@ func CreateCategory(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, data)
-	return
-
 }
 
 // CreateCategoryNew.
@@ -79,6 +76,4 @@ func CreateCategoryNew(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, data)
-	return
-
 }
