@@ -4,7 +4,6 @@
 package config
 
 import (
-	"io/ioutil"
 	"log"
 	"os"
 	"sync"
@@ -54,7 +53,7 @@ func Get() Config {
 	once.Do(func() {
 		configFile := configPath[Env] + "config." + Env + ".yaml"
 
-		configData, err := ioutil.ReadFile(configFile)
+		configData, err := os.ReadFile(configFile)
 		if err != nil {
 			log.Printf("Load config err %s", err)
 		}
