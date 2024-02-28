@@ -96,7 +96,6 @@ func AUpdateTag(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, affectRow)
-	return
 }
 
 // UpdateTag.
@@ -114,9 +113,9 @@ func AUpdateTagNew(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, affectRow)
-	return
 }
 
+// CreateTag. create tag
 func CreateTag(c *gin.Context) {
 	var req tag.CreateTagRequest
 	if err := c.BindJSON(&req); err != nil {
@@ -131,5 +130,4 @@ func CreateTag(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, data)
-	return
 }
