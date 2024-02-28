@@ -25,6 +25,7 @@ func PageInfo(ctx *gin.Context) {
 
 	req.Slug = slug
 
+	// get page info
 	data, err := req.GetPageInfo()
 	if err != nil {
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
