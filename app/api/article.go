@@ -37,6 +37,7 @@ func GetIndexArticle(ctx *gin.Context) {
 	req.Offset = (page - 1) * limit
 	req.Limit = limit
 
+	// get article list
 	data, err := req.GetArticleList()
 	if err != nil {
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
