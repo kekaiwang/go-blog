@@ -47,7 +47,7 @@ func GetTagLists(c *gin.Context) {
 	ApiResponseSuccess(c, data)
 }
 
-// UpdateTag.
+// UpdateTag. update tag info
 func UpdateTag(c *gin.Context) {
 	var req tag.UpdateTagRequest
 	if err := c.BindJSON(&req); err != nil {
@@ -62,7 +62,23 @@ func UpdateTag(c *gin.Context) {
 	}
 
 	ApiResponseSuccess(c, affectRow)
-	return
+}
+
+// UpdateTag. update tag info
+func UpdateTags(c *gin.Context) {
+	var req tag.UpdateTagRequest
+	if err := c.BindJSON(&req); err != nil {
+		ApiResponseErr(c, errs.ErrBindJson)
+		return
+	}
+
+	affectRow, err := req.UpdateTag()
+	if err != nil {
+		ApiResponseErr(c, err)
+		return
+	}
+
+	ApiResponseSuccess(c, affectRow)
 }
 
 // UpdateTag.
