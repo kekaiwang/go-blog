@@ -28,6 +28,7 @@ func Login(ctx *gin.Context) {
 	ApiResponseSuccess(ctx, res)
 }
 
+// Info base info
 func Info(ctx *gin.Context) {
 	var res user.InfoResponse
 	res.Roles = "admin"
@@ -36,5 +37,4 @@ func Info(ctx *gin.Context) {
 	res.Avatar = "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif"
 	res.Introduction = "wkekai blog"
 	ApiResponseSuccess(ctx, res)
-	return
 }
