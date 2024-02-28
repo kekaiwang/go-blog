@@ -6,6 +6,7 @@ import (
 	"github.com/kekaiwang/go-blog/internal/service/user"
 )
 
+// Login. admin login
 func Login(ctx *gin.Context) {
 	var req user.LoginRequest
 	if err := ctx.ShouldBind(&req); err != nil {
@@ -25,7 +26,6 @@ func Login(ctx *gin.Context) {
 	}
 
 	ApiResponseSuccess(ctx, res)
-	return
 }
 
 func Info(ctx *gin.Context) {
