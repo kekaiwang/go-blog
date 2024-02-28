@@ -135,6 +135,7 @@ func GetTagList(ctx *gin.Context) {
 func GetNewTagList(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
+	// var params
 	var (
 		link    = ctx.Param("link")
 		req     category.GetTagReq
