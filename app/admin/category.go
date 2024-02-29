@@ -69,6 +69,7 @@ func CreateCategoryNew(c *gin.Context) {
 		return
 	}
 
+	// create category
 	data, err := req.CreateCategory()
 	if err != nil {
 		ApiResponseErr(c, err)
