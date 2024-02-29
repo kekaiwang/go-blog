@@ -35,6 +35,7 @@ func UpdateCategory(c *gin.Context) {
 		return
 	}
 
+	// update category
 	affectRow, err := req.UpdateCategory()
 	if err != nil {
 		ApiResponseErr(c, err)
