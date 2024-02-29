@@ -28,6 +28,27 @@ func AdminCategoryList(c *gin.Context) {
 	ApiResponseSuccess(c, data)
 }
 
+// AdminCategoryList. admin category list
+func AdminCategoryLists(c *gin.Context) {
+	var (
+		req   category.AdminCategoryListRequest
+		limit = c.Query("limit")
+		page  = c.Query("page")
+	)
+
+	req.Offset, req.Page, req.Limit = tools.NewLimitOffset(limit, page)
+	req.Name = c.Query("name")
+
+	// get admin category list
+	data, err := req.GetAdminCategoryList()
+	if err != nil {
+		ApiResponseErr(c, err)
+		return
+	}
+
+	ApiResponseSuccess(c, data)
+}
+
 // UpdateCategory. update admin category
 func UpdateCategory(c *gin.Context) {
 	var req category.UpdateCategoryRequest
