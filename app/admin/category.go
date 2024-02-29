@@ -18,6 +18,7 @@ func AdminCategoryList(c *gin.Context) {
 	req.Offset, req.Page, req.Limit = tools.NewLimitOffset(limit, page)
 	req.Name = c.Query("name")
 
+	// get admin category list
 	data, err := req.GetAdminCategoryList()
 	if err != nil {
 		ApiResponseErr(c, err)
