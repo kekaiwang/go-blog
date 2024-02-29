@@ -19,6 +19,7 @@ func Login(ctx *gin.Context) {
 		return
 	}
 
+	// login
 	res, err := req.Login(ctx)
 	if err != nil {
 		ApiResponseErr(ctx, err)
