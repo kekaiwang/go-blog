@@ -38,6 +38,7 @@ func GetTagLists(c *gin.Context) {
 	req.Offset, req.Page, req.Limit = tools.NewLimitOffset(limit, page)
 	req.Name = c.Query("name")
 
+	// get tag list
 	data, err := req.GetTagList()
 	if err != nil {
 		ApiResponseErr(c, err)
