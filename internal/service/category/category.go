@@ -83,6 +83,7 @@ func (req *GetTagReq) GetTagList() (*GetCategoryRes, error) {
 	return res, nil
 }
 
+// formatterCateArticle. formatter cate article info
 func formatterCateArticle(articles []*model.Article) []*CategoryArticle {
 	var cateArticle []*CategoryArticle
 
