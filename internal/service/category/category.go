@@ -113,6 +113,7 @@ func (req *AdminCategoryListRequest) GetAdminCategoryList() (*AdminCategoryListR
 		args = []interface{}{req.Name}
 	}
 
+	// get category list
 	data, err := category.GetCategoryList(query, args, req.Limit, req.Offset)
 	if err != nil {
 		return nil, errs.ErrQueryModel
