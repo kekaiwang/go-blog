@@ -119,6 +119,7 @@ func (req *AdminCategoryListRequest) GetAdminCategoryList() (*AdminCategoryListR
 		return nil, errs.ErrQueryModel
 	}
 
+	// count category
 	total, err := category.CountCategory(query, args)
 	if err != nil {
 		return nil, errs.ErrQueryModel
