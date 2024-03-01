@@ -9,11 +9,11 @@ import (
 // Article 文章
 type AdminUser struct {
 	ID         int       `ggorm:"id" json:"id"`
-	Name       string    `gorm:"name" json:"name"`         // 名字
-	Password   string    `gorm:"password" json:"password"` // 密码
-	Email      string    `gorm:"email" json:"email"`       // 邮箱
-	LoginCount int       `gorm:"login_count" json:"login_count"`
-	Salt       string    `gorm:"salt" json:"salt"`
+	Name       string    `gorm:"name" json:"name"`               // 名字
+	Password   string    `gorm:"password" json:"password"`       // 密码
+	Email      string    `gorm:"email" json:"email"`             // 邮箱
+	LoginCount int       `gorm:"login_count" json:"login_count"` // 登陆次数
+	Salt       string    `gorm:"salt" json:"salt"`               // 盐
 	Status     int8      `gorm:"status" json:"status"`
 	LastLogin  time.Time `gorm:"last_login" json:"last_login"`
 	LastIp     string    `gorm:"last_ip" json:"last_ip"`
