@@ -17,6 +17,7 @@ func (req *PageReq) GetPageInfo() (*PageRes, error) {
 		return nil, err
 	}
 
+	// res
 	res = &PageRes{
 		Name:    data.Name,
 		Slug:    data.Slug,
