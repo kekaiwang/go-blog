@@ -61,6 +61,7 @@ func (t *UpdateTagRequest) UpdateTag() (int64, *errs.ErrNo) {
 	data.Status = t.Status
 	data.Updated = time.Now()
 
+	// update tag
 	affectRow, err := data.UpdateTag()
 	if err != nil {
 		return 0, errs.ErrQueryModel
