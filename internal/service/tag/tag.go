@@ -84,6 +84,7 @@ func (t *CreateTagRequest) CreateTag() (*model.Tag, *errs.ErrNo) {
 	tag.Created = time.Now()
 	tag.Updated = time.Now()
 
+	// tag create
 	err := tag.Create()
 	if err != nil {
 		return nil, errs.ErrQueryModel
