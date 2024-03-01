@@ -45,6 +45,7 @@ func (t *GetTagListRequest) GetTagList() (*GetTagListResponse, *errs.ErrNo) {
 func (t *UpdateTagRequest) UpdateTag() (int64, *errs.ErrNo) {
 	// 1. get tag info
 	var tag model.Tag
+	// get tag by query
 	data, err := tag.GetTagByQuery(" id = ? ", []interface{}{t.ID})
 	if err != nil {
 		return 0, errs.ErrQueryModel
