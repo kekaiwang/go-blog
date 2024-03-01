@@ -6,8 +6,8 @@ type LoginRequest struct {
 }
 
 type LoginResponse struct {
-	ID       int64  `json:"id"`
-	Password string `json:"password"`
+	ID       int64  `json:"id"`       // id
+	Password string `json:"password"` // password
 }
 
 type InfoRequest struct {
