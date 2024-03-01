@@ -27,6 +27,7 @@ func (t *GetTagListRequest) GetTagList() (*GetTagListResponse, *errs.ErrNo) {
 		return nil, errs.ErrQueryModel
 	}
 
+	// count tag rows
 	total, err := tag.CountTag(query, args)
 	if err != nil {
 		return nil, errs.ErrQueryModel
