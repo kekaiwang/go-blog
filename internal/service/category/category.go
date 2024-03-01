@@ -152,6 +152,7 @@ func (req *UpdateCategoryRequest) UpdateCategory() (int64, *errs.ErrNo) {
 	data.Status = req.Status
 	data.Updated = time.Now()
 
+	// update category
 	affectRow, err := data.UpdateCategory()
 	if err != nil {
 		return 0, errs.ErrQueryModel
