@@ -20,3 +20,10 @@ type InfoResponse struct {
 	Avatar       string `json:"Avatar"`
 	Introduction string `json:"Introduction"`
 }
+
+type InfoRes struct {
+	Roles        string `json:"Roles"`
+	Name         string `json:"Name"`
+	Avatar       string `json:"Avatar"`
+	Introduction string `json:"Introduction"`
+}
