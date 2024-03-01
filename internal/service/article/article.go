@@ -85,6 +85,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 		tagIds = append(tagIds, id)
 	}
 
+	// get tab by id
 	var t model.Tag
 	tags, err := t.GetTagByIds(tagIds)
 	if err != nil {
@@ -109,6 +110,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 		catg = &model.Category{}
 	}
 
+	// html out
 	strContent := template.HTML(article.Content)
 
 	timeStr := article.DisplayTime.Format("2006-01-02")
