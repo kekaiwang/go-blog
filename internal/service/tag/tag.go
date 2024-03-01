@@ -21,6 +21,7 @@ func (t *GetTagListRequest) GetTagList() (*GetTagListResponse, *errs.ErrNo) {
 		args = []interface{}{t.Name}
 	}
 
+	// get tag list
 	data, err := tag.GetTagList(query, args, t.Limit, t.Offset)
 	if err != nil {
 		return nil, errs.ErrQueryModel
