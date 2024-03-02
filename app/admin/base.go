@@ -10,7 +10,7 @@ import (
 // Response. res struct
 type Response struct {
 	Data interface{} `json:"data"` // data
-	Msg  string      `json:"msg"`
+	Msg  string      `json:"msg"`  // msg info
 	Code int64       `json:"code"`
 }
 
