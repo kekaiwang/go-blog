@@ -39,5 +39,6 @@ func ApiResponseWarn(c *gin.Context, err *errs.ErrNo) {
 		Data: nil,
 		Msg:  err.Message,
 		Code: err.Code,
+		Next: nil,
 	})
 }
