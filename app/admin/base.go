@@ -12,6 +12,7 @@ type Response struct {
 	Data interface{} `json:"data"` // data
 	Msg  string      `json:"msg"`  // msg info
 	Code int64       `json:"code"` // code
+	Next interface{} `json:"next"`
 }
 
 // ApiResponseSuccess. api res json
@@ -25,6 +26,15 @@ func ApiResponseSuccess(c *gin.Context, data interface{}) {
 
 // ApiResponseErr. api res err
 func ApiResponseErr(c *gin.Context, err *errs.ErrNo) {
+	c.JSON(http.StatusOK, Response{
+		Data: nil,
+		Msg:  err.Message,
+		Code: err.Code,
+	})
+}
+
+// ApiResponseWarn. api res warn
+func ApiResponseWarn(c *gin.Context, err *errs.ErrNo) {
 	c.JSON(http.StatusOK, Response{
 		Data: nil,
 		Msg:  err.Message,
