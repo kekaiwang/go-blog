@@ -12,7 +12,7 @@ type Response struct {
 	Data interface{} `json:"data"` // data
 	Msg  string      `json:"msg"`  // msg info
 	Code int64       `json:"code"` // code
-	Next interface{} `json:"next"`
+	Next interface{} `json:"next"` // next info
 }
 
 // ApiResponseSuccess. api res json
