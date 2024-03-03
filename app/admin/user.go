@@ -14,6 +14,7 @@ func Login(ctx *gin.Context) {
 		return
 	}
 
+	// check params
 	if req.Password == "" || req.UserName == "" {
 		ApiResponseErr(ctx, errs.ErrInvalidParam)
 		return
