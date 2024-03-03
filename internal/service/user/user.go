@@ -61,6 +61,7 @@ func (u LoginRequest) AdminLogin(ctx *gin.Context) (*LoginResponse, *errs.ErrNo)
 	}
 
 	// 3. update login info
+	// update ip & last time & count
 	info.LastIp = ctx.ClientIP()
 	info.LastLogin = time.Now()
 	info.LoginCount += 1
