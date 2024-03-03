@@ -16,7 +16,7 @@ type AdminUser struct {
 	Salt       string    `gorm:"salt" json:"salt"`               // 盐
 	Status     int8      `gorm:"status" json:"status"`           // status
 	LastLogin  time.Time `gorm:"last_login" json:"last_login"`   // last login time
-	LastIp     string    `gorm:"last_ip" json:"last_ip"`
+	LastIp     string    `gorm:"last_ip" json:"last_ip"`         // last login ip
 	Created    time.Time `gorm:"created" json:"created"`
 	Updated    time.Time `gorm:"updated" json:"updated"`
 }
