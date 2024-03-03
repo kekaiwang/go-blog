@@ -14,8 +14,8 @@ type AdminUser struct {
 	Email      string    `gorm:"email" json:"email"`             // 邮箱
 	LoginCount int       `gorm:"login_count" json:"login_count"` // 登陆次数
 	Salt       string    `gorm:"salt" json:"salt"`               // 盐
-	Status     int8      `gorm:"status" json:"status"`
-	LastLogin  time.Time `gorm:"last_login" json:"last_login"`
+	Status     int8      `gorm:"status" json:"status"`           // status
+	LastLogin  time.Time `gorm:"last_login" json:"last_login"`   // last login time
 	LastIp     string    `gorm:"last_ip" json:"last_ip"`
 	Created    time.Time `gorm:"created" json:"created"`
 	Updated    time.Time `gorm:"updated" json:"updated"`
