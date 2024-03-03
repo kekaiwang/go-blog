@@ -42,6 +42,7 @@ func (u *AdminUser) GetUser(query string, args []interface{}) (*AdminUser, error
 	return &user, nil
 }
 
+// UpdateLogin. update login info
 func (u *AdminUser) UpdateLogin() (int, error) {
 	result := drives.BlogDB.Model(&u).Update(u)
 	if err := result.Error; err != nil {
