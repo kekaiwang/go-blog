@@ -133,6 +133,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 
 // getCategory.
 func getCategory() map[int64]*model.Category {
+	// get all category
 	var c model.Category
 	categories, err := c.GetAll()
 	if err != nil {
