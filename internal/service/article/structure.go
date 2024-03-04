@@ -16,14 +16,14 @@ type IndexArticleRes struct {
 }
 
 type GetIndexArticleRes struct {
-	Id           int64  `json:"id"`           // id
-	Title        string `json:"title"`        // title
-	Thumb        string `json:"thumb"`        // thumb
-	Slug         string `json:"slug"`         // slug
-	Excerpt      string `json:"excerpt"`      // excerpt
-	DisplayTime  string `json:"display_time"` // display time
-	CategoryName string `json:"category_name"`
-	CategoryLink string `json:"category_link"`
+	Id           int64  `json:"id"`            // id
+	Title        string `json:"title"`         // title
+	Thumb        string `json:"thumb"`         // thumb
+	Slug         string `json:"slug"`          // slug
+	Excerpt      string `json:"excerpt"`       // excerpt
+	DisplayTime  string `json:"display_time"`  // display time
+	CategoryName string `json:"category_name"` // category name
+	CategoryLink string `json:"category_link"` // link
 }
 
 // article detail
