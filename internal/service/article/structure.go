@@ -32,12 +32,12 @@ type ArticleDetailReq struct {
 }
 
 type ArticleDetailRes struct {
-	Title        string        `json:"title"`   // title
-	Thumb        string        `json:"thumb"`   // thumb
-	Slug         string        `json:"slug"`    // slug
-	Excerpt      string        `json:"excerpt"` // excerpt
-	Content      template.HTML `json:"content"` // content
-	DisplayTime  string        `json:"display_time"`
+	Title        string        `json:"title"`        // title
+	Thumb        string        `json:"thumb"`        // thumb
+	Slug         string        `json:"slug"`         // slug
+	Excerpt      string        `json:"excerpt"`      // excerpt
+	Content      template.HTML `json:"content"`      // content
+	DisplayTime  string        `json:"display_time"` // display time
 	Next         string        `json:"next"`
 	Previous     string        `json:"previous"`
 	CategoryName string        `json:"category_name"`
