@@ -151,6 +151,7 @@ func getCategory() map[int64]*model.Category {
 func getCategoryInfo() map[int64]*model.Category {
 	var c model.Category
 
+	// get all category
 	categories, err := c.GetAll()
 	if err != nil {
 		return nil

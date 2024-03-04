@@ -32,7 +32,7 @@ func (c *Category) Create() error {
 	return drives.BlogDB.Create(c).Error
 }
 
-// GetAll
+// GetAll. get all category
 func (c *Category) GetAll() ([]*Category, error) {
 	categories := []*Category{}
 
