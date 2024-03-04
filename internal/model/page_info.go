@@ -24,6 +24,7 @@ func PageInfoModel() *PageInfo {
 	return pageInfo
 }
 
+// TableName. table name page info
 func (pi *PageInfo) TableName() string {
 	return `page_info`
 }
