@@ -16,11 +16,11 @@ type IndexArticleRes struct {
 }
 
 type GetIndexArticleRes struct {
-	Id           int64  `json:"id"`    // id
-	Title        string `json:"title"` // title
-	Thumb        string `json:"thumb"` // thumb
-	Slug         string `json:"slug"`
-	Excerpt      string `json:"excerpt"`
+	Id           int64  `json:"id"`      // id
+	Title        string `json:"title"`   // title
+	Thumb        string `json:"thumb"`   // thumb
+	Slug         string `json:"slug"`    // slug
+	Excerpt      string `json:"excerpt"` // excerpt
 	DisplayTime  string `json:"display_time"`
 	CategoryName string `json:"category_name"`
 	CategoryLink string `json:"category_link"`
