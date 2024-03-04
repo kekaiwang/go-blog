@@ -38,8 +38,8 @@ type ArticleDetailRes struct {
 	Excerpt      string        `json:"excerpt"`      // excerpt
 	Content      template.HTML `json:"content"`      // content
 	DisplayTime  string        `json:"display_time"` // display time
-	Next         string        `json:"next"`
-	Previous     string        `json:"previous"`
+	Next         string        `json:"next"`         // next article
+	Previous     string        `json:"previous"`     // previous article
 	CategoryName string        `json:"category_name"`
 	CategoryLink string        `json:"category_link"`
 	Tag          []*ArticleTag `json:"tag"`
