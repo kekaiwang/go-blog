@@ -33,6 +33,7 @@ func main() {
 func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 	wg.Add(1)
 
+	// init gin
 	r := gin.Default()
 
 	router.SetupRouter(r)
