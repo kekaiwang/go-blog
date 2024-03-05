@@ -65,5 +65,6 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 
 // init source
 func initResource() {
+	// db init
 	drives.BlogDBInit()
 }
