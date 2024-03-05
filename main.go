@@ -48,6 +48,7 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 	format.PrintGreen("server start : http://127.0.0.1:8089")
 
 	go func(stopFunc context.Context, waitCtx *sync.WaitGroup) {
+		// server start
 		if err := gracehttp.Serve(ser); err != nil {
 			panic(err.Error())
 		}
