@@ -44,6 +44,7 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 		WriteTimeout:      3 * time.Second,
 	}
 
+	// print info
 	format.PrintGreen("server start : http://127.0.0.1:8089")
 
 	go func(stopFunc context.Context, waitCtx *sync.WaitGroup) {
