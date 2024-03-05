@@ -12,6 +12,7 @@ import (
 	"github.com/kekaiwang/go-blog/utils/format"
 )
 
+// RegisterSignal.
 func RegisterSignal(stopFunc context.CancelFunc) {
 	ch := make(chan os.Signal, 2)
 
