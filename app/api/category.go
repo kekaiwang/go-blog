@@ -152,6 +152,7 @@ func GetNewTagList(ctx *gin.Context) {
 		return
 	}
 
+	// parse page
 	if pageStr != "" {
 		page, err = strconv.ParseInt(pageStr, 10, 64)
 		if err != nil {
