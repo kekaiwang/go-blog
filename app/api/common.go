@@ -11,5 +11,5 @@ import (
 
 // HealthPing. health ping
 func HealthPing(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, "PONG")
+	ctx.JSON(http.StatusOK, "PONG") // pong
 }
