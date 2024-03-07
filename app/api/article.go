@@ -62,7 +62,7 @@ func GetArticleDetail(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
 	var (
-		req article.ArticleDetailReq
+		req article.ArticleDetailReq // detail req
 	)
 
 	req.Slug = ctx.Param("slug")
