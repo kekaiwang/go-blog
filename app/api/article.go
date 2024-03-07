@@ -13,7 +13,7 @@ import (
 func GetIndexArticle(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 	var (
-		req article.GetIndexArticleReq
+		req article.GetIndexArticleReq // req info
 		// offset  int64
 		page    int64
 		err     error
