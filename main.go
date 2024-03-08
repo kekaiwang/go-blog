@@ -69,3 +69,9 @@ func initResource() {
 	// db init
 	drives.BlogDBInit()
 }
+
+// init source info
+func initResources() {
+	// db init
+	drives.BlogDBInit()
+}
