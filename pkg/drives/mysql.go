@@ -26,6 +26,7 @@ func initBlogDB() {
 		initDB     func()
 	)
 
+	// init DB
 	initDB = func() {
 		db, err := gorm.Open("mysql", conf.Mysql.Uri)
 		if err != nil {
