@@ -38,8 +38,8 @@ func SetupRouter(g *gin.Engine) {
 
 	v := g.Group("/admin")
 	{
-		v.POST("/login", admin.Login)
-		v.GET("/info", handlers.Verify, admin.Info)
+		v.POST("/login", admin.Login)               // login
+		v.GET("/info", handlers.Verify, admin.Info) // info
 
 		// tag
 		v.GET("/tag/list", handlers.Verify, admin.GetTagList)
