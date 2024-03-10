@@ -42,10 +42,10 @@ func SetupRouter(g *gin.Engine) {
 		v.GET("/info", handlers.Verify, admin.Info) // info
 
 		// tag
-		v.GET("/tag/list", handlers.Verify, admin.GetTagList)   // get tag list
-		v.POST("/tag/update", handlers.Verify, admin.UpdateTag) // udpate tag
-		v.PUT("/tag/create", handlers.Verify, admin.CreateTag)  // create tag
-		v.GET("/tag/list/:limit", handlers.Verify, admin.GetTagList)
+		v.GET("/tag/list", handlers.Verify, admin.GetTagList)        // get tag list
+		v.POST("/tag/update", handlers.Verify, admin.UpdateTag)      // udpate tag
+		v.PUT("/tag/create", handlers.Verify, admin.CreateTag)       // create tag
+		v.GET("/tag/list/:limit", handlers.Verify, admin.GetTagList) // get tag
 		v.GET("/tag/list/:lt", handlers.Verify, admin.GetTagList)
 
 		// category
