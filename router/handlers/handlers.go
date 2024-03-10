@@ -12,6 +12,7 @@ import (
 func Verify(ctx *gin.Context) {
 	token := ctx.GetHeader("X-Token")
 	if token != config.Get().App.Token {
+		// res info
 		ctx.JSON(http.StatusOK, admin.Response{
 			Data: nil,
 			Code: 1,
