@@ -149,24 +149,7 @@ func getCategory() map[int64]*model.Category {
 	return cMap
 }
 
-// getCategoryNew.
-func getCategoryNew() map[int64]*model.Category {
-	// get all category
-	var c model.Category
-	categories, err := c.GetAll()
-	if err != nil {
-		return nil
-	}
-
-	cMap := make(map[int64]*model.Category)
-	for _, c := range categories {
-		cMap[c.ID] = c
-	}
-
-	return cMap
-}
-
-// getArticleSlug.
+// getArticleSlug. get article slug info
 func getArticleSlug(slug string) (model.Article, error) {
 	// 1. get article info
 	var a model.Article
