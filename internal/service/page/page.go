@@ -6,6 +6,7 @@ import (
 	"github.com/kekaiwang/go-blog/internal/model"
 )
 
+// GetPageInfo. get page info
 func (req *PageReq) GetPageInfo() (*PageRes, error) {
 	var (
 		res *PageRes
