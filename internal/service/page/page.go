@@ -28,6 +28,7 @@ func (req *PageReq) GetPageInfo() (*PageRes, error) {
 	return res, nil
 }
 
+// GetPageList. get page list
 func (req *PageReq) GetPageList() (*PageRes, error) {
 	var (
 		res *PageRes
