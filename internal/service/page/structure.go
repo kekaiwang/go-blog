@@ -13,3 +13,10 @@ type PageRes struct {
 	Slug    string        `json:"slug"`
 	Content template.HTML `json:"content"`
 }
+
+// PageInfo.
+type PageInfo struct {
+	Name    string        `json:"name"`
+	Slug    string        `json:"slug"`
+	Content template.HTML `json:"content"`
+}
