@@ -7,6 +7,7 @@ type PageReq struct {
 	Slug string `json:"slug"`
 }
 
+// PageRes.
 type PageRes struct {
 	Name    string        `json:"name"`
 	Slug    string        `json:"slug"`
