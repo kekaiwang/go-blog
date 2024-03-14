@@ -14,8 +14,8 @@ var (
 )
 
 func BlogDBInit() {
-	initBlogDB()
-	initBlogImgDB()
+	initBlogDB()    // init DB
+	initBlogImgDB() // init img DB
 }
 
 // layze init
