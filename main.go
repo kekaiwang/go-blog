@@ -53,6 +53,7 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 			panic(err.Error())
 		}
 
+		// receive stop signal
 		for {
 			select {
 			case <-stopFunc.Done():
