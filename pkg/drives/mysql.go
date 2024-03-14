@@ -54,9 +54,9 @@ func initBlogDB() {
 // initBlogImgDB db
 func initBlogImgDB() {
 	var (
-		conf       = config.Get()
-		blogDBOnce sync.Once
-		iniImgDB   func()
+		conf      = config.Get()
+		imgDBOnce sync.Once
+		iniImgDB  func()
 	)
 
 	// init DB
@@ -74,7 +74,7 @@ func initBlogImgDB() {
 	}
 
 	if BlogDB == nil {
-		blogDBOnce.Do(iniImgDB)
+		imgDBOnce.Do(iniImgDB)
 	} else if err := BlogDB.DB().Ping(); err != nil {
 		iniImgDB()
 	} else if err := BlogDB.Error; err != nil {
