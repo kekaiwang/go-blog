@@ -56,11 +56,11 @@ func initBlogImgDB() {
 	var (
 		conf       = config.Get()
 		blogDBOnce sync.Once
-		initDB     func()
+		iniImgDB   func()
 	)
 
 	// init DB
-	initDB = func() {
+	iniImgDB = func() {
 		db, err := gorm.Open("mysql", conf.Mysql.Uri)
 		if err != nil {
 			panic(err)
@@ -74,9 +74,9 @@ func initBlogImgDB() {
 	}
 
 	if BlogDB == nil {
-		blogDBOnce.Do(initDB)
+		blogDBOnce.Do(iniImgDB)
 	} else if err := BlogDB.DB().Ping(); err != nil {
-		initDB()
+		iniImgDB()
 	} else if err := BlogDB.Error; err != nil {
 		panic(err)
 	}
