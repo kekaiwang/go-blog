@@ -42,6 +42,7 @@ func NewLimitOffset(limitStr, pageStr string) (int64, int64, int64) {
 	page, _ = strconv.ParseInt(pageStr, 10, 64)
 	limit, _ = strconv.ParseInt(limitStr, 10, 64)
 
+	// page default
 	if page == 0 {
 		page = 1
 	}
