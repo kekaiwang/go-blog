@@ -16,7 +16,7 @@ func Verify(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, admin.Response{
 			Data: nil,
 			Code: 1,
-			Msg:  "请先登陆",
+			Msg:  "please login",
 		})
 		return
 	}
