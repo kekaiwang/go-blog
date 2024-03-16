@@ -20,7 +20,7 @@ func RegisterSignal(stopFunc context.CancelFunc) {
 	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)
 
 	go func(stopFunc context.CancelFunc) {
-		sig := <-ch
+		sig := <-ch // send
 		switch sig {
 		case syscall.SIGINT, syscall.SIGTERM:
 			format.PrintGreen("receive stop signal")
