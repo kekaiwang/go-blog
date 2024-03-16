@@ -21,7 +21,7 @@ func NewTotalPage(total, pagesize int64) int {
 // MD5. md5 func
 func MD5(name, password, salt string) string {
 	// salt
-	saltString := "!w@k#k"
+	saltString := "!w@k#k" // salt
 	pass := md5.New()
 	io.WriteString(pass, saltString)
 	io.WriteString(pass, name)
