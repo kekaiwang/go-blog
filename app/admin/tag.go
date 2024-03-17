@@ -135,3 +135,20 @@ func CreateTag(c *gin.Context) {
 
 	ApiResponseSuccess(c, data)
 }
+
+// CreateTagInfo. create tag info
+func CreateTagInfo(c *gin.Context) {
+	var req tag.CreateTagRequest
+	if err := c.BindJSON(&req); err != nil {
+		ApiResponseErr(c, errs.ErrBindJson)
+		return
+	}
+
+	data, err := req.CreateTag()
+	if err != nil {
+		ApiResponseErr(c, err)
+		return
+	}
+
+	ApiResponseSuccess(c, data)
+}
