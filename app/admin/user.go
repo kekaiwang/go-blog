@@ -36,7 +36,7 @@ func Info(ctx *gin.Context) {
 	res.Roles = "admin"
 
 	res.Name = "wkekai"
-	res.Avatar = "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif"
+	res.Avatar = "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif" // avatar link
 	res.Introduction = "wkekai blog"
 	ApiResponseSuccess(ctx, res)
 }
