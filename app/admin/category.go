@@ -88,7 +88,7 @@ func CreateCategory(c *gin.Context) {
 }
 
 // CreateCategoryNew.
-func CreateCategoryNew(c *gin.Context) {
+func CreateCategoryNews(c *gin.Context) {
 	var req category.CreateCategoryRequest
 	if err := c.ShouldBind(&req); err != nil {
 		ApiResponseErr(c, errs.ErrBindJson)
