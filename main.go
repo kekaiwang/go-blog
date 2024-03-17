@@ -17,6 +17,7 @@ import (
 // main
 func main() {
 	initResource()
+	initResources()
 	wg := sync.WaitGroup{}
 
 	// init context
