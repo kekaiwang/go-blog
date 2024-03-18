@@ -39,6 +39,7 @@ func NewLimitOffset(limitStr, pageStr string) (int64, int64, int64) {
 		limit  int64
 	)
 
+	// page limit
 	page, _ = strconv.ParseInt(pageStr, 10, 64)
 	limit, _ = strconv.ParseInt(limitStr, 10, 64)
 
