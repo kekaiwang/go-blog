@@ -34,7 +34,8 @@ func initBlogDB() {
 			panic(err)
 		}
 
-		BlogDB = db
+		// blog db
+		BlogDB = db // db
 		BlogDB.DB().SetMaxOpenConns(conf.Mysql.MaxOpenConns)
 		BlogDB.DB().SetMaxIdleConns(conf.Mysql.MaxIdleConns)
 		BlogDB.DB().SetConnMaxLifetime(time.Minute * time.Duration(conf.Mysql.ConnMaxLifeTime))
