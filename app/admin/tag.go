@@ -75,7 +75,7 @@ func UpdateTags(c *gin.Context) {
 	}
 
 	// update tags new inof
-	affectRow, err := req.UpdateTag()
+	affectRow, err := req.UpdateTag() // update tag
 	if err != nil {
 		ApiResponseErr(c, err)
 		return
