@@ -39,7 +39,7 @@ func GetTagLists(c *gin.Context) {
 	req.Name = c.Query("name")
 
 	// get tag list
-	data, err := req.GetTagList()
+	data, err := req.GetTagList() // get tag list
 	if err != nil {
 		ApiResponseErr(c, err)
 		return
