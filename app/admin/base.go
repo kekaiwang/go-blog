@@ -36,7 +36,7 @@ func ApiResponseErr(c *gin.Context, err *errs.ErrNo) {
 // ApiResponseWarn. api res warn
 func ApiResponseWarn(c *gin.Context, err *errs.ErrNo) {
 	c.JSON(http.StatusOK, Response{
-		Data: nil,
+		Data: nil, // nil data
 		Msg:  err.Message,
 		Code: err.Code,
 		Next: nil,
