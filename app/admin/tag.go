@@ -128,6 +128,7 @@ func CreateTag(c *gin.Context) {
 		return
 	}
 
+	// create tag
 	data, err := req.CreateTag()
 	if err != nil {
 		ApiResponseErr(c, err)
