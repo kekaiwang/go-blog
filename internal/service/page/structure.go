@@ -9,9 +9,9 @@ type PageReq struct {
 
 // PageRes.
 type PageRes struct {
-	Name    string        `json:"name"`
-	Slug    string        `json:"slug"`
-	Content template.HTML `json:"content"`
+	Name    string        `json:"name"`    // name
+	Slug    string        `json:"slug"`    // slug
+	Content template.HTML `json:"content"` // content
 }
 
 // PageInfo.
