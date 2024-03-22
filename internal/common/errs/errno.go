@@ -8,7 +8,7 @@ var (
 	ErrInvalidParam        = &ErrNo{Code: 1001, Message: "Invalid params"}   // invalid params
 	ErrBindJson            = &ErrNo{Code: 1002, Message: "Bind json error"}  // err bind json
 	ErrRecordNotFound      = &ErrNo{Code: 1003, Message: "Record not found"} // record not found
-	ErrQueryModel          = &ErrNo{Code: 1004, Message: "Query model err."}
+	ErrQueryModel          = &ErrNo{Code: 1004, Message: "Query model err."} // query err
 	ErrUpdateRecord        = &ErrNo{Code: 1005, Message: "update model err."}
 	ErrRecordAlreadyExists = &ErrNo{Code: 1006, Message: "Already exists."}
 	ErrRecordyExists       = &ErrNo{Code: 1006, Message: "Already exists."}
