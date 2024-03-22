@@ -8,5 +8,5 @@ type ErrNo struct {
 
 // Error. error msg
 func (err *ErrNo) Error() string {
-	return err.Message
+	return err.Message // err msg
 }
