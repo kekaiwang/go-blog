@@ -43,7 +43,7 @@ func initBlogDB() {
 	}
 
 	if BlogDB == nil {
-		blogDBOnce.Do(initDB)
+		blogDBOnce.Do(initDB) // init once
 	} else if err := BlogDB.DB().Ping(); err != nil {
 		initDB()
 	} else if err := BlogDB.Error; err != nil {
