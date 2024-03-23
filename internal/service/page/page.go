@@ -44,7 +44,7 @@ func (req *PageReq) GetPageList() (*PageRes, error) {
 	res = &PageRes{
 		Name:    data.Name,
 		Slug:    data.Slug,
-		Content: template.HTML(data.Content),
+		Content: template.HTML(data.Content), // page content
 	}
 
 	return res, nil
