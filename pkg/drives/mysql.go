@@ -68,9 +68,9 @@ func initBlogImgDB() {
 		}
 
 		BlogDB = db
-		BlogDB.DB().SetMaxOpenConns(conf.Mysql.MaxOpenConns) // max connect
-		BlogDB.DB().SetMaxIdleConns(conf.Mysql.MaxIdleConns) // max idel connect
-		BlogDB.DB().SetConnMaxLifetime(time.Minute * time.Duration(conf.Mysql.ConnMaxLifeTime))
+		BlogDB.DB().SetMaxOpenConns(conf.Mysql.MaxOpenConns)                                    // max connect
+		BlogDB.DB().SetMaxIdleConns(conf.Mysql.MaxIdleConns)                                    // max idel connect
+		BlogDB.DB().SetConnMaxLifetime(time.Minute * time.Duration(conf.Mysql.ConnMaxLifeTime)) // max life
 		BlogDB.LogMode(conf.Mysql.LogMode)
 	}
 
