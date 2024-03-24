@@ -82,3 +82,35 @@ func initBlogImgDB() {
 		panic(err)
 	}
 }
+
+// layze init
+// initBlogImgDB db
+func initBlogImgD() {
+	var (
+		conf      = config.Get()
+		imgDBOnce sync.Once
+		iniImgDB  func()
+	)
+
+	// init DB
+	iniImgDB = func() {
+		db, err := gorm.Open("mysql", conf.Mysql.Uri)
+		if err != nil {
+			panic(err)
+		}
+
+		BlogDB = db
+		BlogDB.DB().SetMaxOpenConns(conf.Mysql.MaxOpenConns)                                    // max connect
+		BlogDB.DB().SetMaxIdleConns(conf.Mysql.MaxIdleConns)                                    // max idel connect
+		BlogDB.DB().SetConnMaxLifetime(time.Minute * time.Duration(conf.Mysql.ConnMaxLifeTime)) // max life
+		BlogDB.LogMode(conf.Mysql.LogMode)
+	}
+
+	if BlogDB == nil {
+		imgDBOnce.Do(iniImgDB)
+	} else if err := BlogDB.DB().Ping(); err != nil {
+		iniImgDB()
+	} else if err := BlogDB.Error; err != nil {
+		panic(err)
+	}
+}
