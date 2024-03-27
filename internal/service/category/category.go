@@ -181,7 +181,7 @@ func (req *CreateCategoryRequest) CreateCategory() (*model.Category, *errs.ErrNo
 	cate.Created = time.Now()
 	cate.Updated = time.Now()
 
-	err = cate.Create()
+	err = cate.Create() // create category
 	if err != nil {
 		return nil, errs.ErrQueryModel
 	}
