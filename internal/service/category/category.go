@@ -170,7 +170,7 @@ func (req *CreateCategoryRequest) CreateCategory() (*model.Category, *errs.ErrNo
 		return nil, errs.ErrQueryModel
 	}
 
-	if num > 0 {
+	if num > 0 { // check num
 		return nil, errs.ErrRecordAlreadyExists
 	}
 
