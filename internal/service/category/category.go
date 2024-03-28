@@ -193,7 +193,9 @@ func (req *CreateCategoryRequest) CreateCategory() (*model.Category, *errs.ErrNo
 func (req *CreateCategoryRequest) CreateCategoryInfo() (*model.Category, *errs.ErrNo) {
 	// 1. check repeat
 	var cate model.Category
-	num, err := cate.CountCategory(" name = ? ", []interface{}{req.Name})
+
+	num, err := cate.CountCategory(" name = ? ", []interface{}{req.Name}) // count by name
+	// count by name
 	if err != nil {
 		return nil, errs.ErrQueryModel
 	}
