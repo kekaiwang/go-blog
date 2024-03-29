@@ -13,10 +13,10 @@ type GetCategoryReq struct {
 }
 
 type GetCategoryRes struct {
-	Data  []*CategoryArticle `json:"data"`
-	Name  string             `json:"name"`
-	Total int64              `json:"total"`
-	Meta  Meta               `json:"meta"`
+	Data  []*CategoryArticle `json:"data"`  // data
+	Name  string             `json:"name"`  // name
+	Total int64              `json:"total"` // total
+	Meta  Meta               `json:"meta"`  // meta
 }
 
 type CategoryArticle struct {
