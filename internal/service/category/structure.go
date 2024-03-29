@@ -20,9 +20,9 @@ type GetCategoryRes struct {
 }
 
 type CategoryArticle struct {
-	Title       string `json:"title"`
-	Slug        string `json:"slug"`
-	DisplayTime string `json:"display_time"`
+	Title       string `json:"title"`        // title
+	Slug        string `json:"slug"`         // slug
+	DisplayTime string `json:"display_time"` // dispaly
 }
 
 type Meta struct {
