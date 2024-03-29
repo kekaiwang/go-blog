@@ -208,7 +208,7 @@ func (req *CreateCategoryRequest) CreateCategoryInfo() (*model.Category, *errs.E
 	cate.Name = req.Name
 	cate.RouterLink = req.RouterLink
 	cate.Status = req.Status
-	cate.Created = time.Now()
+	cate.Created = time.Now() // create time
 	cate.Updated = time.Now() // update time
 
 	err = cate.Create()
