@@ -96,7 +96,7 @@ func CreateCategoryNews(c *gin.Context) {
 	}
 
 	// create category
-	data, err := req.CreateCategory()
+	data, err := req.CreateCategory() // create
 	if err != nil {
 		ApiResponseErr(c, err)
 		return
