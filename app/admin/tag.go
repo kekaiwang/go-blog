@@ -123,6 +123,7 @@ func AUpdateTagNew(c *gin.Context) {
 // CreateTag. create tag
 func CreateTag(c *gin.Context) {
 	var req tag.CreateTagRequest
+	// bind json
 	if err := c.BindJSON(&req); err != nil {
 		ApiResponseErr(c, errs.ErrBindJson)
 		return
