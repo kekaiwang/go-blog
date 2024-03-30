@@ -147,7 +147,7 @@ func CreateTagInfo(c *gin.Context) {
 		return
 	}
 
-	data, err := req.CreateTag()
+	data, err := req.CreateTag() // create
 	if err != nil {
 		ApiResponseErr(c, err)
 		return
