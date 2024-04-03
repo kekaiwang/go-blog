@@ -208,7 +208,7 @@ func GetNewsTagList(ctx *gin.Context) {
 		pageStr = ctx.Query("page")
 	)
 
-	if link == "" {
+	if link == "" { // set title info
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
 			"Title": "Kekai Wang",
 		})
