@@ -235,7 +235,7 @@ func GetNewsTagList(ctx *gin.Context) {
 	data, err := req.GetTagList()
 	if err != nil {
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
-			"Title": "Kekai Wang",
+			"Title": "Kekai Wang", // title
 		})
 		return
 	}
