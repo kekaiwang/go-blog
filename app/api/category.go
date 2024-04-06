@@ -217,7 +217,7 @@ func GetNewsTagList(ctx *gin.Context) {
 
 	// parse page
 	if pageStr != "" {
-		page, err = strconv.ParseInt(pageStr, 10, 64)
+		page, err = strconv.ParseInt(pageStr, 10, 64) // parse page
 		if err != nil {
 			ctx.HTML(http.StatusOK, "error.html", nil)
 			return
