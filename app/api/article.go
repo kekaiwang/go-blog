@@ -65,7 +65,7 @@ func GetArticleDetail(ctx *gin.Context) {
 		req article.ArticleDetailReq // detail req
 	)
 
-	req.Slug = ctx.Param("slug")
+	req.Slug = ctx.Param("slug") // slug param
 
 	data, err := req.ArticleDetail()
 	if err != nil {
@@ -90,7 +90,7 @@ func GetArticleDetailInfo(ctx *gin.Context) {
 		req article.ArticleDetailReq // detail info
 	)
 
-	req.Slug = ctx.Param("slug")
+	req.Slug = ctx.Param("slug") // param
 
 	data, err := req.ArticleDetail()
 	if err != nil {
