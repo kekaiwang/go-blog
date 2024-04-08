@@ -53,7 +53,7 @@ func Get() Config {
 	once.Do(func() {
 		configFile := configPath[Env] + "config." + Env + ".yaml"
 
-		configData, err := os.ReadFile(configFile)
+		configData, err := os.ReadFile(configFile) // read config
 		if err != nil {
 			log.Printf("Load config err %s", err)
 		}
