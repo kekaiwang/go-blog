@@ -18,7 +18,7 @@ func PageInfo(ctx *gin.Context) {
 
 	if slug == "" {
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
-			"Title": "Kekai Wang",
+			"Title": "Kekai Wang", // set page
 		})
 		return
 	}
