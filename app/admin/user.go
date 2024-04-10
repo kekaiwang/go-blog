@@ -33,7 +33,7 @@ func Login(ctx *gin.Context) {
 // Info base info
 func Info(ctx *gin.Context) {
 	var res user.InfoResponse
-	res.Roles = "admin"
+	res.Roles = "admin" // role
 
 	res.Name = "wkekai"
 	res.Avatar = "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif" // avatar link
