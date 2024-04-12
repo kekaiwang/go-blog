@@ -23,7 +23,7 @@ func Login(ctx *gin.Context) {
 	// login admin
 	res, err := req.Login(ctx)
 	if err != nil {
-		ApiResponseErr(ctx, err)
+		ApiResponseErr(ctx, err) // err
 		return
 	}
 
