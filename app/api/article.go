@@ -76,9 +76,9 @@ func GetArticleDetail(ctx *gin.Context) {
 	}
 
 	ctx.HTML(http.StatusOK, "article.html", gin.H{
-		"info":  data,
-		"tags":  data.Tag,
-		"Title": data.Title,
+		"info":  data,       // info
+		"tags":  data.Tag,   // tag list
+		"Title": data.Title, // title
 	})
 }
 
