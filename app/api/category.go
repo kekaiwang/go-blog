@@ -241,8 +241,8 @@ func GetNewsTagList(ctx *gin.Context) {
 	}
 
 	meta := category.Meta{
-		Name: "标签|tag",
-		Type: ctx.Query("type"),
+		Name: "标签|tag",          // name
+		Type: ctx.Query("type"), // type
 	}
 
 	ctx.HTML(http.StatusOK, "category.html", gin.H{
