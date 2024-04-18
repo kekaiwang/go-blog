@@ -10,7 +10,7 @@ import "fmt"
  * @params str
  */
 func PrintGreen(str string) {
-	printColor(str, 32)
+	printColor(str, 32) // grene
 }
 
 /**
