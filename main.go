@@ -58,7 +58,7 @@ func webServer(stopCtx context.Context, wg *sync.WaitGroup) {
 		for {
 			select {
 			case <-stopFunc.Done(): // stop signal
-				format.PrintGreen("web server stopped")
+				format.PrintGreen("web server stopped") // color print
 				waitCtx.Done()
 				return
 			}
