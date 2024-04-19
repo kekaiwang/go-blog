@@ -50,5 +50,5 @@ func NewLimitOffset(limitStr, pageStr string) (int64, int64, int64) {
 
 	offset = (page - 1) * limit
 
-	return offset, page, limit
+	return offset, page, limit // res
 }
