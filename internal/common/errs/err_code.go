@@ -2,8 +2,8 @@ package errs
 
 // ErrNo. err no struct
 type ErrNo struct {
-	Code    int64 // err code
-	Message string
+	Code    int64  // err code
+	Message string // err msg
 }
 
 // Error. error msg
