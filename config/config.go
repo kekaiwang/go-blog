@@ -58,7 +58,7 @@ func Get() Config {
 			log.Printf("Load config err %s", err)
 		}
 
-		err = yaml.Unmarshal([]byte(configData), &config)
+		err = yaml.Unmarshal([]byte(configData), &config) // decode config
 		if err != nil {
 			log.Printf("Yaml unmarshal err: %s", err)
 		}
