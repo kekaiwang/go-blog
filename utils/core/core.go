@@ -17,7 +17,7 @@ func RegisterSignal(stopFunc context.CancelFunc) {
 	ch := make(chan os.Signal, 2)
 
 	// notify signal
-	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)
+	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM) // ginal
 
 	go func(stopFunc context.CancelFunc) {
 		sig := <-ch // send
