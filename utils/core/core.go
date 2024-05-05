@@ -14,7 +14,7 @@ import (
 
 // RegisterSignal.
 func RegisterSignal(stopFunc context.CancelFunc) {
-	ch := make(chan os.Signal, 2)
+	ch := make(chan os.Signal, 2) // chan
 
 	// notify signal
 	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM) // ginal
