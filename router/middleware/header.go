@@ -30,7 +30,7 @@ func Options(c *gin.Context) {
 		c.Header("Access-Control-Allow-Credentials", "true")
 		c.Header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
 		c.Header("Access-Control-Allow-Headers", "Content-Type, X-Requested-With, User-Agent, Platform, Qsc-Token, Cache-Control")
-		c.Header("Allow", "HEAD,GET,POST,PUT,PATCH,DELETE,OPTIONS")
+		c.Header("Allow", "HEAD,GET,POST,PUT,PATCH,DELETE,OPTIONS") // allow method
 		c.Header("Content-Type", "application/json")
 		c.AbortWithStatus(200)
 	}
