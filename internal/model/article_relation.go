@@ -11,10 +11,12 @@ type ArticleRelation struct {
 
 var articleRelation *ArticleRelation
 
+// ArticleRelationModel. article relation model
 func ArticleRelationModel() *ArticleRelation {
 	return articleRelation
 }
 
+// TableName. return table name info
 func (ar *ArticleRelation) TableName() string {
 	return `article_relation`
 }
