@@ -9,7 +9,7 @@ import (
 	"github.com/kekaiwang/go-blog/pkg/drives"
 )
 
-//Article 文章
+// Article 文章
 type Article struct {
 	Id          int64     `gorm:"primary_key" json:"id"`
 	Title       string    `gorm:"title"`                            // 标题
@@ -43,11 +43,12 @@ func ArticleModel() *Article {
 	return article
 }
 
+// TableName article name
 func (a *Article) TableName() string {
 	return `article`
 }
 
-//GetArticleBySlug get first article by slug
+// GetArticleBySlug get first article by slug
 func (a *Article) GetArticleBySlug(slug string) (*Article, error) {
 	article := &Article{}
 	err := drives.BlogDB.Table(a.TableName()).Where("slug = ? ", slug).First(article).Error
@@ -58,7 +59,7 @@ func (a *Article) GetArticleBySlug(slug string) (*Article, error) {
 	return article, nil
 }
 
-//GetArticleList
+// GetArticleList
 func (a *Article) GetArticleList(limit, offset int64, isDraft int) ([]*Article, error) {
 	articles := []*Article{}
 	err := drives.BlogDB.Table(a.TableName()).Where("is_draft = ? ", isDraft).Limit(limit).Offset(offset).Order("display_time DESC").Find(&articles).Error
