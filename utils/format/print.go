@@ -18,7 +18,7 @@ func PrintGreen(str string) {
  * @params str
  */
 func PrintRed(str string) {
-	printColor(str, 31)
+	printColor(str, 31) // red
 }
 
 /**
