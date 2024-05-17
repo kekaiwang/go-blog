@@ -13,8 +13,8 @@ type Category struct {
 	RouterLink  string    `gorm:"router_link" json:"router_link"`   // 路由链接
 	LinkArticle int64     `gorm:"link_article" json:"link_article"` // 链接文章数量
 	Status      int       `gorm:"status" json:"status"`             // 1:正常 2:禁用 3:已删除
-	Created     time.Time `gorm:"created_at" json:"created"`
-	Updated     time.Time `gorm:"updated_at" json:"updated"`
+	Created     time.Time `gorm:"created_at" json:"created"`        // created time
+	Updated     time.Time `gorm:"updated_at" json:"updated"`        // updated time
 }
 
 var category *Category
