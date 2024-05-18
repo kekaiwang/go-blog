@@ -136,7 +136,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 func getCategory() map[int64]*model.Category {
 	// get all category
 	var c model.Category
-	categories, err := c.GetAll()
+	categories, err := c.GetAll() // get all
 	if err != nil {
 		return nil
 	}
