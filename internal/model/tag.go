@@ -13,7 +13,7 @@ type Tag struct {
 	UseTimes   int64     `gorm:"use_times" json:"use_times"`     // tag链接文章数量
 	Status     int       `gorm:"status" json:"status"`           // 1:正常 2:禁用
 	Created    time.Time `gorm:"created" json:"created"`         // created time
-	Updated    time.Time `gorm:"updated" json:"updated"`
+	Updated    time.Time `gorm:"updated" json:"updated"`         // update time
 }
 
 var tag *Tag
