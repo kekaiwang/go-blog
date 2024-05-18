@@ -8,14 +8,14 @@ import (
 
 type PageInfo struct {
 	Id        int64     `gorm:"primary_key"`
-	Name      string    `gorm:"name" json:"name"`         // 页面名字
-	Slug      string    `gorm:"slug" json:"slug"`         // 页面标识,路由地址
-	Content   string    `gorm:"content" json:"content"`   // 内容
-	Markdown  string    `gorm:"markdown" json:"markdown"` // markdown info
-	Status    int       `gorm:"status" json:"status"`     //1:正常 2:禁用 3:已删除
-	Preview   int64     `gorm:"preview" json:"preview"`   // 阅读数量
-	CreatedAt time.Time `gorm:"created_at" json:"created_at"`
-	UpdatedAt time.Time `gorm:"updated_at" json:"updated_at"`
+	Name      string    `gorm:"name" json:"name"`             // 页面名字
+	Slug      string    `gorm:"slug" json:"slug"`             // 页面标识,路由地址
+	Content   string    `gorm:"content" json:"content"`       // 内容
+	Markdown  string    `gorm:"markdown" json:"markdown"`     // markdown info
+	Status    int       `gorm:"status" json:"status"`         //1:正常 2:禁用 3:已删除
+	Preview   int64     `gorm:"preview" json:"preview"`       // 阅读数量
+	CreatedAt time.Time `gorm:"created_at" json:"created_at"` // created time
+	UpdatedAt time.Time `gorm:"updated_at" json:"updated_at"` // updated time
 }
 
 var pageInfo *PageInfo
