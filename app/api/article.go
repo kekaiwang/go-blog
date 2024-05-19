@@ -100,7 +100,7 @@ func GetArticleDetailInfo(ctx *gin.Context) {
 		return
 	}
 
-	ctx.HTML(http.StatusOK, "article.html", gin.H{
+	ctx.HTML(http.StatusOK, "article.html", gin.H{ // res info
 		"info":  data,
 		"tags":  data.Tag,
 		"Title": data.Title,
