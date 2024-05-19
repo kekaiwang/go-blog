@@ -67,10 +67,10 @@ func GetArticleDetail(ctx *gin.Context) {
 
 	req.Slug = ctx.Param("slug") // slug param
 
-	data, err := req.ArticleDetail()
+	data, err := req.ArticleDetail() // article detail
 	if err != nil {
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
-			"Title": "Kekai Wang",
+			"Title": "Kekai Wang", // err title
 		})
 		return
 	}
