@@ -145,7 +145,7 @@ func GetNewTagList(ctx *gin.Context) {
 		pageStr = ctx.Query("page")
 	)
 
-	if link == "" {
+	if link == "" { // check link info
 		ctx.HTML(http.StatusOK, "error.html", gin.H{
 			"Title": "Kekai Wang",
 		})
