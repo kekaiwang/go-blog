@@ -12,7 +12,7 @@ func PageInfo(ctx *gin.Context) {
 	ctx.Header("Content-type", "text/html; charset=utf-8")
 
 	var (
-		slug = ctx.Param("slug")
+		slug = ctx.Param("slug") // slug params
 		req  page.PageReq
 	)
 
