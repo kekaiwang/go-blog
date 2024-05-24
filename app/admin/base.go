@@ -18,8 +18,8 @@ type Response struct {
 // ApiResponseSuccess. api res json
 func ApiResponseSuccess(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, Response{
-		Data: data,
-		Msg:  "SUCCESS",
+		Data: data,      // data info
+		Msg:  "SUCCESS", // msg
 		Code: 0,
 	})
 }
