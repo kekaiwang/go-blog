@@ -4,9 +4,9 @@ import "github.com/kekaiwang/go-blog/pkg/drives"
 
 // ArticleRelation. article relation model
 type ArticleRelation struct {
-	Id        int64 `gorm:"primary_key"`
-	ArticleId int64 `gorm:"article_id"` // 文章ID
-	TagId     int64 `gorm:"tag_id"`     // 标签ID
+	Id        int64 `gorm:"primary_key"` // primary key
+	ArticleId int64 `gorm:"article_id"`  // 文章ID
+	TagId     int64 `gorm:"tag_id"`      // 标签ID
 }
 
 var articleRelation *ArticleRelation
