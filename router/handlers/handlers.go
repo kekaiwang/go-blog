@@ -14,8 +14,8 @@ func Verify(ctx *gin.Context) {
 	if token != config.Get().App.Token {
 		// res info
 		ctx.JSON(http.StatusOK, admin.Response{
-			Data: nil,
-			Code: 1,
+			Data: nil,            // get nil token
+			Code: 1,              // code set one
 			Msg:  "please login", // login msg
 		})
 		return
