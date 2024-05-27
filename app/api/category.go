@@ -200,12 +200,12 @@ func GetNewsTagList(ctx *gin.Context) {
 
 	// var params
 	var (
-		link    = ctx.Param("link")
-		req     category.GetTagReq
-		page    int64
-		err     error
-		limit   = int64(10)
-		pageStr = ctx.Query("page")
+		link    = ctx.Param("link") // link
+		req     category.GetTagReq  // req params
+		page    int64               // page
+		err     error               // err info
+		limit   = int64(10)         // limit
+		pageStr = ctx.Query("page") // query page
 	)
 
 	if link == "" { // set title info
