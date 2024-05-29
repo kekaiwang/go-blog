@@ -23,7 +23,7 @@ func SetupRouter(g *gin.Engine) {
 	g.NoRoute(func(c *gin.Context) {
 		c.Header("Content-type", "text/html; charset=utf-8")
 
-		c.HTML(http.StatusNotFound, "404.html", gin.H{
+		c.HTML(http.StatusNotFound, "404.html", gin.H{ // 404 page
 			"Title": "Kekai Wang's blog | NOT FOUND",
 		})
 	})
