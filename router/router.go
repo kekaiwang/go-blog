@@ -12,7 +12,7 @@ import (
 
 func SetupRouter(g *gin.Engine) {
 	g.Use(gin.Recovery())
-	g.Use(middleware.NoCache)
+	g.Use(middleware.NoCache) // no cache
 	g.Use(middleware.Options)
 	g.Use(middleware.OrderAccess)
 
