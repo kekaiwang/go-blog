@@ -13,7 +13,7 @@ func NewTotalPage(total, pagesize int64) int {
 	pages := float64(pagesize)
 	totalp := float64(total)
 
-	totalPage := math.Ceil(totalp / pages)
+	totalPage := math.Ceil(totalp / pages) // calculate
 
 	return int(totalPage)
 }
