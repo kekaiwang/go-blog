@@ -114,6 +114,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 	// html out
 	strContent := template.HTML(article.Content)
 
+	// to res struct
 	timeStr := article.DisplayTime.Format("2006-01-02")
 	res = &ArticleDetailRes{
 		Title:        article.Title,
