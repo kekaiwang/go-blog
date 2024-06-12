@@ -126,7 +126,7 @@ func (req *ArticleDetailReq) ArticleDetail() (*ArticleDetailRes, error) {
 		Next:         article.Next,
 		Previous:     article.Previous,
 		CategoryName: catg.Name,
-		CategoryLink: catg.RouterLink,
+		CategoryLink: catg.RouterLink, // link
 		Tag:          detailTag,
 	}
 
