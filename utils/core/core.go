@@ -23,8 +23,8 @@ func RegisterSignal(stopFunc context.CancelFunc) {
 		sig := <-ch // send
 		switch sig {
 		case syscall.SIGINT, syscall.SIGTERM: // ginal
-			format.PrintGreen("receive stop signal")
-			stopFunc() // stop server
+			format.PrintGreen("receive stop signal") // print signal
+			stopFunc()                               // stop server
 			return
 		}
 	}(stopFunc)
