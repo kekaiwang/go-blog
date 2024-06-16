@@ -9,9 +9,10 @@ type GetIndexArticleReq struct {
 	Limit  int64 `json:"limit"`
 }
 
+// index article
 type IndexArticleRes struct {
-	Data        []*GetIndexArticleRes `json:"data"`
-	Total       int64                 `json:"total"`
+	Data        []*GetIndexArticleRes `json:"data"`  // data
+	Total       int64                 `json:"total"` // total
 	CurrentPage int64                 `json:"current_page"`
 }
 
