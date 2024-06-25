@@ -19,7 +19,7 @@ func RegisterSignal(stopFunc context.CancelFunc) {
 	// notify signal
 	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM) // ginal
 
-	go func(stopFunc context.CancelFunc) {
+	go func(stopFunc context.CancelFunc) { // stop sginal
 		sig := <-ch // send
 		switch sig {
 		case syscall.SIGINT, syscall.SIGTERM: // ginal
