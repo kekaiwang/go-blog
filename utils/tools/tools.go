@@ -10,8 +10,8 @@ import (
 
 // NewTotalPage. new page
 func NewTotalPage(total, pagesize int64) int {
-	pages := float64(pagesize)
-	totalp := float64(total)
+	pages := float64(pagesize) // page
+	totalp := float64(total)   // total page
 
 	totalPage := math.Ceil(totalp / pages) // calculate
 
