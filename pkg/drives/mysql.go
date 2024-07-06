@@ -87,9 +87,9 @@ func initBlogImgDB() {
 // initBlogImgDB db
 func initBlogImgD() {
 	var (
-		conf      = config.Get()
-		imgDBOnce sync.Once
-		iniImgDB  func()
+		conf      = config.Get() // config
+		imgDBOnce sync.Once      // img db
+		iniImgDB  func()         // init db
 	)
 
 	// init DB
