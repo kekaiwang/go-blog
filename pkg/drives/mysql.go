@@ -76,7 +76,7 @@ func initBlogImgDB() {
 
 	if BlogDB == nil {
 		imgDBOnce.Do(iniImgDB)
-	} else if err := BlogDB.DB().Ping(); err != nil {
+	} else if err := BlogDB.DB().Ping(); err != nil { // ping info
 		iniImgDB()
 	} else if err := BlogDB.Error; err != nil {
 		panic(err)
