@@ -182,7 +182,7 @@ func GetNewTagList(ctx *gin.Context) {
 		Type: ctx.Query("type"),
 	}
 
-	ctx.HTML(http.StatusOK, "category.html", gin.H{
+	ctx.HTML(http.StatusOK, "category.html", gin.H{ // category html
 		"data":          data.Data,
 		"Title":         data.Name,
 		"total":         data.Total,
