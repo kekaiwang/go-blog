@@ -6,7 +6,7 @@ const (
 )
 
 // ErrMessage. err message
-var ErrMessage = map[int]string{
+var ErrMessage = map[int]string{ // err message
 	Success:         "请求成功",
 	ErrParamInvalid: "请求参数错误",
 }
