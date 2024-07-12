@@ -227,9 +227,9 @@ func GetNewsTagList(ctx *gin.Context) {
 	if page == 0 {
 		page = 1
 	}
-	req.Offset = (page - 1) * limit
-	req.Limit = limit
-	req.Link = link
+	req.Offset = (page - 1) * limit // req param
+	req.Limit = limit               // req.param
+	req.Link = link                 /// lin
 
 	// get tag list
 	data, err := req.GetTagList()
