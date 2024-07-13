@@ -15,9 +15,9 @@ func GetIndexArticle(ctx *gin.Context) {
 	var (
 		req article.GetIndexArticleReq // req info
 		// offset  int64
-		page    int64
-		err     error
-		limit   = int64(5)
+		page    int64      // page
+		err     error      // err
+		limit   = int64(5) // limit
 		pageStr = ctx.Query("page")
 	)
 
