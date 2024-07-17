@@ -164,9 +164,9 @@ func GetNewTagList(ctx *gin.Context) {
 	if page == 0 {
 		page = 1
 	}
-	req.Offset = (page - 1) * limit
-	req.Limit = limit
-	req.Link = link
+	req.Offset = (page - 1) * limit // req offset
+	req.Limit = limit               // req limit
+	req.Link = link                 // req link
 
 	// get tag list
 	data, err := req.GetTagList()
