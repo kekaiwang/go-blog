@@ -70,6 +70,7 @@ func (a *Article) GetArticleList(limit, offset int64, isDraft int) ([]*Article, 
 	return articles, nil
 }
 
+// CountArticle
 func (a *Article) CountArticle(where string, args []interface{}) (int64, error) {
 	var total int64
 	err := drives.BlogDB.Table(a.TableName()).Where(where, args...).Count(&total).Error
