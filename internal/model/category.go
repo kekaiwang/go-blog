@@ -80,6 +80,7 @@ func (c *Category) GetCategoryList(query string, args []interface{}, limit, offs
 	return categories, nil
 }
 
+// CountCategory. count category
 func (c *Category) CountCategory(query string, args []interface{}) (int64, error) {
 	var total int64
 

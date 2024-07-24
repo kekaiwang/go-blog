@@ -78,7 +78,7 @@ func (t *Tag) GetTagList(query string, args []interface{}, limit, offset int64) 
 
 // CountTag.
 func (t *Tag) CountTag(query string, args []interface{}) (int64, error) {
-	var total int64
+	var total int64 // total num
 	err := drives.BlogDB.Table(t.TableName()).Where(query, args...).Count(&total).Error
 	if err != nil {
 		return total, err
