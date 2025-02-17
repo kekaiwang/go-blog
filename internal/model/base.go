@@ -13,3 +13,7 @@ type RowsCount struct {
 const (
 	MaxBatchSize = 500
 )
+
+type txModel struct {
+	Dao
+}
