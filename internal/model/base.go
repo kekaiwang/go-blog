@@ -1,6 +1,9 @@
 package model
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
+)
 
 type (
 	FindCall func(db *gorm.DB)
@@ -40,4 +43,15 @@ func FindByQueryCondition[T any](field string, query string, args []interface{},
 	}
 
 	return results, nil
+}
+
+func FindByLockCondition[T any](tx *gorm.DB, field string, query string, args []interface{}) (results []*T, err error) {
+
+	db := tx.Clauses(clause.Locking{Strength: "UPDATE"}).Model(new(T)).Select(field).Where(query, args...)
+
+	if err := db.Find(&results); err.Error != nil {
+		return results, err.Error
+	}
+
+	return
 }
