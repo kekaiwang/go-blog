@@ -55,3 +55,14 @@ func FindByLockCondition[T any](tx *gorm.DB, field string, query string, args []
 
 	return
 }
+
+func FindByLockConditionQuery[T any](tx *gorm.DB, field string, query string, args []interface{}) (results []*T, err error) {
+
+	db := tx.Clauses(clause.Locking{Strength: "UPDATE"}).Model(new(T)).Select(field).Where(query, args...)
+
+	if err := db.Find(&results); err.Error != nil {
+		return results, err.Error
+	}
+
+	return
+}
