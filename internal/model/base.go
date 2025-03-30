@@ -84,3 +84,10 @@ func RawsByCondition[T any](tx *gorm.DB, query string, args []interface{}) (int6
 
 	return count.Total, nil
 }
+
+func CreateOne[T any](tx *gorm.DB, obj *T) (err error) {
+	if err := tx.Model(new(T)).Create(obj); err.Error != nil {
+		return err.Error
+	}
+	return
+}
