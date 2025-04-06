@@ -67,7 +67,7 @@ func FindByLockConditionQuery[T any](tx *gorm.DB, field string, query string, ar
 	return
 }
 
-func RawsByCondition[T any](tx *gorm.DB, query string, args []interface{}) (int64, error) {
+func RawsByCondition(tx *gorm.DB, query string, args []interface{}) (int64, error) {
 	var (
 		count = RowsCount{}
 		field = `count(1) as total`
