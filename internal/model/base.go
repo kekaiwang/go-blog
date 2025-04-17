@@ -114,21 +114,3 @@ func DeleteQuerys[T any](tx *gorm.DB, query string, args []interface{}) error {
 func DeleteAll[T any](tx *gorm.DB, query string, args []interface{}) error {
 	return tx.Where(query, args...).Delete(new(T)).Error
 }
-
-func RawsBy(tx *gorm.DB, query string, args []interface{}) (int64, error) {
-	var (
-		count = RowsCount{}
-		field = `count(1) as total`
-	)
-
-	if tx == nil {
-		tx = EmbedDao.DB()
-	}
-
-	db := tx.Model(new(T)).Select(field).Where(query, args...)
-	if err := db.Find(&count); err != nil {
-		return count.Total, err.Error
-	}
-
-	return count.Total, nil
-}
