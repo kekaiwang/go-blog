@@ -114,7 +114,3 @@ func DeleteQuerys[T any](tx *gorm.DB, query string, args []interface{}) error {
 func DeleteAll[T any](tx *gorm.DB, query string, args []interface{}) error {
 	return tx.Where(query, args...).Delete(new(T)).Error
 }
-
-func DeleteAll[T any](tx *gorm.DB, query string, args []interface{}) error {
-	return tx.Where(query, args...).Delete(new(T)).Error
-}
