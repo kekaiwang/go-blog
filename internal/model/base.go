@@ -92,6 +92,10 @@ func CreateOne[T any](tx *gorm.DB, obj *T) (err error) {
 	return
 }
 
+func DeleteAll[T any](tx *gorm.DB, query string, args []interface{}) error {
+	return tx.Where(query, args...).Delete(new(T)).Error
+}
+
 func Delete[T any](tx *gorm.DB, query string, args []interface{}) error {
 	return tx.Where(query, args...).Delete(new(T)).Error
 }
