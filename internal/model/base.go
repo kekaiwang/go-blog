@@ -13,6 +13,10 @@ type RowsCount struct {
 	Total int64 `gorm:"column:total"`
 }
 
+type RowsCounts struct {
+	Total int64 `gorm:"column:total"`
+}
+
 const (
 	MaxBatchSize = 500
 )
