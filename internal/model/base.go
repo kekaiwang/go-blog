@@ -25,6 +25,10 @@ const (
 	MaxBatchSize = 500
 )
 
+const (
+	MaxCreateBatchSize = 500
+)
+
 type txModel struct {
 	Dao
 }
