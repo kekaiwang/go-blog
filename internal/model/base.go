@@ -33,6 +33,10 @@ type txModel struct {
 	Dao
 }
 
+type dbModel struct {
+	Dao
+}
+
 func FindByQueryCondition[T any](field string, query string, args []interface{}, opts ...ExtraOption) ([]*T, error) {
 	var results []*T
 
