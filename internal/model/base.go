@@ -10,7 +10,7 @@ type (
 )
 
 type (
-	FindCall func(db *gorm.DB)
+	FindCallFunc func(db *gorm.DB)
 )
 
 type RowsCount struct {
