@@ -17,16 +17,8 @@ type RowsCount struct {
 	Total int64 `gorm:"column:total"`
 }
 
-type RowsCounts struct {
-	Total int64 `gorm:"column:total"`
-}
-
 const (
 	MaxBatchSize = 500
-)
-
-const (
-	MaxCreateBatchSize = 500
 )
 
 type txModel struct {
@@ -35,18 +27,6 @@ type txModel struct {
 
 type dbModel struct {
 	Dao
-}
-
-func FindByQueryCondition[T any](field string, query string, args []interface{}, opts ...ExtraOption) ([]*T, error) {
-	var results []*T
-
-	db := EmbedDao.DBExtra(EmbedDao.DB(), opts...).Model(new(T)).Select(field).Where(query, args...)
-
-	if err := db.Find(&results); err.Error != nil {
-		return results, err.Error
-	}
-
-	return results, nil
 }
 
 func FindByQueryCondition[T any](field string, query string, args []interface{}, opts ...ExtraOption) ([]*T, error) {
@@ -102,6 +82,13 @@ func RawsByCondition(tx *gorm.DB, query string, args []interface{}) (int64, erro
 }
 
 func CreateOne[T any](tx *gorm.DB, obj *T) (err error) {
+	if err := tx.Model(new(T)).Create(obj); err.Error != nil {
+		return err.Error
+	}
+	return
+}
+
+func CreateOneInfo[T any](tx *gorm.DB, obj *T) (err error) {
 	if err := tx.Model(new(T)).Create(obj); err.Error != nil {
 		return err.Error
 	}
