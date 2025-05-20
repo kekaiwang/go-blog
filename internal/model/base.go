@@ -135,7 +135,3 @@ func CreateBatch[T any](tx *gorm.DB, obj *T) (err error) {
 	}
 	return
 }
-
-func DeleteByQuerys[T any](tx *gorm.DB, query string, args []interface{}) error {
-	return tx.Where(query, args...).Delete(new(T)).Error
-}
