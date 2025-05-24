@@ -96,3 +96,13 @@ func (t *Tag) UpdateTag() (int64, error) {
 
 	return int64(result.RowsAffected), nil
 }
+
+// UpdateTag.
+func (t *Tag) UpdateTagInfo() (int64, error) {
+	result := drives.BlogDB.Model(&t).Update(t)
+	if result.Error != nil {
+		return 0, result.Error
+	}
+
+	return int64(result.RowsAffected), nil
+}
