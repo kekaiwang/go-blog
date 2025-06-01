@@ -146,3 +146,7 @@ func CreateOnesifo[T any](tx *gorm.DB, obj *T) (err error) {
 func DeleteBAllINo[T any](tx *gorm.DB, query string, args []interface{}) error {
 	return tx.Where(query, args...).Delete(new(T)).Error
 }
+
+func DeleteBAllINsso[T any](tx *gorm.DB, query string, args []interface{}) error {
+	return tx.Where(query, args...).Delete(new(T)).Error
+}
