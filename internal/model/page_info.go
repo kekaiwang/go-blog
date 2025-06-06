@@ -50,3 +50,8 @@ func (pi *PageInfo) GetPageBySlug(slug string) (*PageInfo, error) {
 func (pi *PageInfo) CreatePa(pageInfo *PageInfo) error {
 	return drives.BlogDB.Create(pageInfo).Error
 }
+
+// Create insert pageInfo
+func (pi *PageInfo) CreatePage(pageInfo *PageInfo) error {
+	return drives.BlogDB.Create(pageInfo).Error
+}
