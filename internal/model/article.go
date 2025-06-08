@@ -115,3 +115,15 @@ func (a *Article) GetArticlesCTID(query string, args []interface{}, limit, offse
 
 	return articles, nil
 }
+
+// GetArticlesByCTId
+func (a *Article) GetArticlesCT(query string, args []interface{}, limit, offset int64) ([]*Article, error) {
+	articles := []*Article{}
+
+	err := drives.BlogDB.Table(a.TableName()).Where(query, args...).Limit(limit).Offset(offset).Order("display_time DESC").Find(&articles).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return articles, nil
+}
