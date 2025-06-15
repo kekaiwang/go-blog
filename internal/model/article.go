@@ -48,6 +48,11 @@ func (a *Article) TableName() string {
 	return `article`
 }
 
+// TableName article name
+func (a *Article) TableNameArticle() string {
+	return `article`
+}
+
 // GetArticleBySlug get first article by slug
 func (a *Article) GetArticleBySlug(slug string) (*Article, error) {
 	article := &Article{}
