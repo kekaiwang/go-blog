@@ -27,6 +27,11 @@ func (ar *ArticleRelation) Create(articleRelation *ArticleRelation) error {
 }
 
 // Create insert articleRelation
+func (ar *ArticleRelation) CreateRelation(articleRelation *ArticleRelation) error {
+	return drives.BlogDB.Create(articleRelation).Error
+}
+
+// Create insert articleRelation
 func (ar *ArticleRelation) CreateArticle(articleRelation *ArticleRelation) error {
 	return drives.BlogDB.Create(articleRelation).Error
 }
