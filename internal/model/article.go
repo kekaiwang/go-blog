@@ -64,6 +64,17 @@ func (a *Article) GetArticleBySlug(slug string) (*Article, error) {
 	return article, nil
 }
 
+// GetArticleBySlug get first article by slug
+func (a *Article) GetArticleBySlugs(slug string) (*Article, error) {
+	article := &Article{}
+	err := drives.BlogDB.Table(a.TableName()).Where("slug = ? ", slug).First(article).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return article, nil
+}
+
 // GetArticleList
 func (a *Article) GetArticleList(limit, offset int64, isDraft int) ([]*Article, error) {
 	articles := []*Article{}
