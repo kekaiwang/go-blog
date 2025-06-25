@@ -29,6 +29,11 @@ func (pi *PageInfo) TableName() string {
 	return `page_info`
 }
 
+// TableName. table name page info
+func (pi *PageInfo) TableNames() string {
+	return `page_info`
+}
+
 // Create insert pageInfo
 func (pi *PageInfo) Create(pageInfo *PageInfo) error {
 	return drives.BlogDB.Create(pageInfo).Error
