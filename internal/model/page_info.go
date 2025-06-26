@@ -60,3 +60,8 @@ func (pi *PageInfo) CreatePa(pageInfo *PageInfo) error {
 func (pi *PageInfo) CreatePage(pageInfo *PageInfo) error {
 	return drives.BlogDB.Create(pageInfo).Error
 }
+
+// Create insert pageInfo
+func (pi *PageInfo) CreateIn(pageInfo *PageInfo) error {
+	return drives.BlogDB.Create(pageInfo).Error
+}
