@@ -51,3 +51,13 @@ func (u *AdminUser) UpdateLogin() (int, error) {
 
 	return int(result.RowsAffected), nil
 }
+
+// UpdateLogin. update login info
+func (u *AdminUser) UpdateLoginInfo() (int, error) {
+	result := drives.BlogDB.Model(&u).Update(u)
+	if err := result.Error; err != nil {
+		return 0, err
+	}
+
+	return int(result.RowsAffected), nil
+}
