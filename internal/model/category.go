@@ -132,3 +132,13 @@ func (c *Category) UpdateCategorys() (int64, error) {
 
 	return result.RowsAffected, nil
 }
+
+// UpdateCategory. update category
+func (c *Category) UpdateCategoryInfo() (int64, error) {
+	result := drives.BlogDB.Model(&c).Update(c)
+	if result.Error != nil {
+		return 0, result.Error
+	}
+
+	return result.RowsAffected, nil
+}
