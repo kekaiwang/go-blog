@@ -154,3 +154,7 @@ func DeleteBAllINsso[T any](tx *gorm.DB, query string, args []interface{}) error
 func DeleteBAllINss[T any](tx *gorm.DB, query string, args []interface{}) error {
 	return tx.Where(query, args...).Delete(new(T)).Error
 }
+
+func DeleteBAllIN[T any](tx *gorm.DB, query string, args []interface{}) error {
+	return tx.Where(query, args...).Delete(new(T)).Error
+}
