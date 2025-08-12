@@ -87,6 +87,17 @@ func (t *Tag) CountTag(query string, args []interface{}) (int64, error) {
 	return total, nil
 }
 
+// CountTag.
+func (t *Tag) CountTags(query string, args []interface{}) (int64, error) {
+	var total int64 // total num
+	err := drives.BlogDB.Table(t.TableName()).Where(query, args...).Count(&total).Error
+	if err != nil {
+		return total, err
+	}
+
+	return total, nil
+}
+
 // UpdateTag.
 func (t *Tag) UpdateTag() (int64, error) {
 	result := drives.BlogDB.Model(&t).Update(t)
