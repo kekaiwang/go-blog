@@ -43,6 +43,7 @@ func SetupRouter(g *gin.Engine) {
 
 		// tag
 		v.GET("/tag/list", handlers.Verify, admin.GetTagList)        // get tag list
+		v.GET("/tag/lists", handlers.Verify, admin.GetTagList)       // get tag list
 		v.POST("/tag/update", handlers.Verify, admin.UpdateTag)      // udpate tag
 		v.PUT("/tag/create", handlers.Verify, admin.CreateTag)       // create tag
 		v.GET("/tag/list/:limit", handlers.Verify, admin.GetTagList) // get tag
