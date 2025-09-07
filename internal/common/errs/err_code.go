@@ -10,3 +10,10 @@ type ErrNo struct {
 func (err *ErrNo) Error() string {
 	return err.Message // err msg
 }
+
+
+
+// Error. error msg
+func (err *ErrNo) Errors() string {
+	return err.Message // err msg
+}
