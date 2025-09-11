@@ -52,3 +52,13 @@ func ApiResponseInfo(c *gin.Context, err *errs.ErrNo) {
 		Next: nil,
 	})
 }
+
+// ApiResponseInfo. api res info
+func ApiResponseInfos(c *gin.Context, err *errs.ErrNo) {
+	c.JSON(http.StatusOK, Response{
+		Data: nil,
+		Msg:  err.Message,
+		Code: err.Code,
+		Next: nil,
+	})
+}
