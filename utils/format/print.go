@@ -29,3 +29,12 @@ func PrintRed(str string) {
 func printColor(str string, color int32) {
 	fmt.Printf("%c[0;0;%vm%s%c[0m\n", 0x1B, color, str, 0x1B)
 }
+
+/**
+ * print color string
+ * @params str
+ * @params color
+ */
+func printColors(str string, color int32) {
+	fmt.Printf("%c[0;0;%vm%s%c[0m\n", 0x1B, color, str, 0x1B)
+}
