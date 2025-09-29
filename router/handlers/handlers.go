@@ -39,3 +39,19 @@ func VerifyAuth(ctx *gin.Context) {
 
 	ctx.Next()
 }
+
+// Verify. auth
+func VerifyAuthinfo(ctx *gin.Context) {
+	token := ctx.GetHeader("X-Token")
+	if token != config.Get().App.Token {
+		// res info
+		ctx.JSON(http.StatusOK, admin.Response{
+			Data: nil,            // get nil token
+			Code: 1,              // code set one
+			Msg:  "please login", // login msg
+		})
+		return
+	}
+
+	ctx.Next()
+}
