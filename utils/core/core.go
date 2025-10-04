@@ -29,3 +29,21 @@ func RegisterSignal(stopFunc context.CancelFunc) {
 		}
 	}(stopFunc)
 }
+
+// RegisterSignal.
+func RegisterSignalInfo(stopFunc context.CancelFunc) {
+	ch := make(chan os.Signal, 2) // chan
+
+	// notify signal
+	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM) // ginal
+
+	go func(stopFunc context.CancelFunc) { // stop sginal
+		sig := <-ch // send
+		switch sig {
+		case syscall.SIGINT, syscall.SIGTERM: // ginal stop
+			format.PrintGreen("receive stop signal") // print signal
+			stopFunc()                               // stop server
+			return
+		}
+	}(stopFunc)
+}
