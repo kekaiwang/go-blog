@@ -66,3 +66,23 @@ func Get() Config {
 
 	return config
 }
+
+// Get. get config by key
+// use once to do
+func GetConfig() Config {
+	once.Do(func() {
+		configFile := configPath[Env] + "config." + Env + ".yaml"
+
+		configData, err := os.ReadFile(configFile) // read config
+		if err != nil {
+			log.Printf("Load config err %s", err)
+		}
+
+		err = yaml.Unmarshal([]byte(configData), &config) // decode config
+		if err != nil {
+			log.Printf("Yaml unmarshal err: %s", err)
+		}
+	})
+
+	return config
+}
