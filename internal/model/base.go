@@ -176,3 +176,10 @@ func DeleteBAllIN[T any](tx *gorm.DB, query string, args []interface{}) error {
 func DeletBAllIN[T any](tx *gorm.DB, query string, args []interface{}) error {
 	return tx.Where(query, args...).Delete(new(T)).Error
 }
+
+func CreateOnesifosss[T any](tx *gorm.DB, obj *T) (err error) {
+	if err := tx.Model(new(T)).Create(obj); err.Error != nil {
+		return err.Error
+	}
+	return
+}
