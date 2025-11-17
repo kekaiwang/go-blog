@@ -14,4 +14,5 @@ var (
 	ErrRecordyExists       = &ErrNo{Code: 1006, Message: "Already exists."}
 	ErrRawsFound           = &ErrNo{Code: 1008, Message: "Raws count err."} // raws count err
 	ErrRawsFounds           = &ErrNo{Code: 1008, Message: "Raws count err."} // raws count err
+	ErrRawsFoundCount          = &ErrNo{Code: 1008, Message: "Raws count err."} // raws count err
 )
