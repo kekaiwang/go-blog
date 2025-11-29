@@ -13,3 +13,14 @@ mysql:
   log_mode: true
   ## minutes
   conn_max_lifetime: 60
+
+mysqls:
+  uri: root:root@tcp(localhost)/goblog?parseTime=true
+  host: localhost
+  user: root
+  pass: root
+  max_idle_conns: 2
+  max_open_conns: 5
+  log_mode: true
+  ## minutes
+  conn_max_lifetime: 60
